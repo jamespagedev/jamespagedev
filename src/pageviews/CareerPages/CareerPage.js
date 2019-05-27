@@ -66,8 +66,6 @@ class CareerPage extends Component {
   };
 
   render() {
-    let scrollPosition = Math.round(window.scrollY);
-    console.log(scrollPosition);
     return (
       <DivWrapper>
         <DivCareerHeaderNav>
@@ -77,6 +75,7 @@ class CareerPage extends Component {
           />
         </DivCareerHeaderNav>
         <CareerNav
+          {...this.props}
           setCareerSearchResults={this.setCareerSearchResults}
           searchText={this.state.searchText}
         />

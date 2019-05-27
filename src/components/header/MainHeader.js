@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
 import MainHeaderNav from './MainHeaderNav';
 import { Colors } from '../../globals/CssMixins';
 
@@ -45,9 +44,5 @@ const MainHeader = props => {
     </DivWrapper>
   );
 };
-
-// MainHeader.propTypes = {
-//   propertyName: PropTypes.string
-// }
 
 export default MainHeader;

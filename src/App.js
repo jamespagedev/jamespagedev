@@ -8,6 +8,15 @@ import UnderConstruction from './pageviews/UnderConstruction';
 import { ClientUrlLinks } from './globals/Variables';
 import { Colors } from './globals/CssMixins';
 
+// local variables
+const origSelNavItems = {
+  main: 'false',
+  work_history: 'false',
+  education: 'false',
+  skills: 'false',
+  projects: 'false'
+};
+
 /***************************************************************************************************
  ********************************************** Styles **********************************************
  **************************************************************************************************/
@@ -38,21 +47,33 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerScrolledOpacity: false
-    }
+      headerScrolledOpacity: false,
+      selectedNavItems: origSelNavItems
+    };
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent)
+    window.addEventListener('scroll', this.listenScrollEvent);
   }
 
-  listenScrollEvent = e => {
+  listenScrollEvent = ev => {
+    ev.preventDefault();
     if (window.scrollY > 291) {
-      this.setState({ headerScrolledOpacity: true })
+      this.setState({ headerScrolledOpacity: true });
     } else {
-      this.setState({ headerScrolledOpacity: false })
+      this.setState({ headerScrolledOpacity: false });
     }
-  }
+  };
+
+  selectNavItem = (ev, item) => {
+    ev.preventDefault();
+    const localSelectedNavItems = Object.assign({}, origSelNavItems);
+    localSelectedNavItems[item] = 'true';
+
+    // set selected item to true
+    this.setState({ selectedNavItems: localSelectedNavItems });
+    console.log('selectedNavItems =', this.state.selectedNavItems);
+  };
 
   render() {
     return (
@@ -78,7 +99,13 @@ class App extends Component {
         <Route
           exact
           path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`}
-          render={() => <CareerPage {...this.props} />}
+          render={() => (
+            <CareerPage
+              {...this.props}
+              selectedNavItems={this.state.selectedNavItems}
+              selectNavItem={this.selectNavItem}
+            />
+          )}
         />
         <Route
           exact
