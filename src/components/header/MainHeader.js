@@ -15,7 +15,7 @@ const DivWrapper = styled.div`
   border-top: 3px solid ${Colors.Rhino};
   border-bottom: 3px solid ${Colors.Rhino};
   background: transparent;
-  background-color: rgba(16, 16, 31, 0.2);
+  background-color: ${props => props.headerScrolledOpacity === 'false' ? `rgba(16, 16, 31, 0.2)` : `rgb(16, 16, 31)`};
   width: 100%;
   position: fixed;
   z-index: 9999;
@@ -35,7 +35,7 @@ const H1Logo = styled.h1`
  **************************************************************************************************/
 const MainHeader = props => {
   return (
-    <DivWrapper>
+    <DivWrapper headerScrolledOpacity={props.headerScrolledOpacity.toString()}>
       <link
         href='https://fonts.googleapis.com/css?family=Charm:700'
         rel='stylesheet'

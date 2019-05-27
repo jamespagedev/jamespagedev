@@ -9,7 +9,7 @@ import { ClientUrlLinks } from './globals/Variables';
 import { Colors } from './globals/CssMixins';
 
 /***************************************************************************************************
- ********************************************** Styles *********************************************
+ ********************************************** Styles **********************************************
  **************************************************************************************************/
 const DivWrapper = styled.div`
   display: flex;
@@ -35,6 +35,25 @@ const GlobalStyle = createGlobalStyle`
  ********************************************* Component *******************************************
  **************************************************************************************************/
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerScrolledOpacity: false
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenScrollEvent)
+  }
+
+  listenScrollEvent = e => {
+    if (window.scrollY > 291) {
+      this.setState({ headerScrolledOpacity: true })
+    } else {
+      this.setState({ headerScrolledOpacity: false })
+    }
+  }
+
   render() {
     return (
       <DivWrapper>
@@ -49,6 +68,7 @@ class App extends Component {
           selectedMainPageTitle={this.props.selectedMainPageTitle}
           setSelectedMainPageTitle={this.props.setSelectedMainPageTitle}
           pathname={this.props.location.pathname}
+          headerScrolledOpacity={this.state.headerScrolledOpacity}
         />
         <Route
           exact
