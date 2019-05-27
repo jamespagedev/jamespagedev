@@ -34,8 +34,12 @@ const DivNavItem = styled.div`
   flex-direction: column;
   margin: 0;
   height: 100%;
-  border-bottom: ${props =>
-    props.selectedNavItem === 'true' && '3px solid red'};
+`;
+
+const DivSelectedBar = styled.div`
+  border-bottom: 2px solid red;
+  margin-bottom: -2px;
+  display: ${props => (props.selectedNavItem === 'true' ? 'block' : 'none')};
 `;
 
 const LinkNavItem = styled(Link)`
@@ -49,12 +53,7 @@ const LinkNavItem = styled(Link)`
   color: ${Colors.Gallary};
 
   &:hover {
-    background: linear-gradient(
-      to bottom,
-      #cc0000 0%,
-      #cc0000 20%,
-      #821c1a 100%
-    );
+    background: linear-gradient(to bottom, #cc0000 0%, #cc0000 20%, #821c1a 100%);
   }
 `;
 
@@ -72,39 +71,35 @@ const CareerNav = props => {
       />
       <DivLineSeperator />
       <DivNavItems>
-        <DivNavItem selectedNavItem={props.selectedNavItems['main']}>
+        <DivNavItem>
           <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'main')}>
             Main
           </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['main']} />
         </DivNavItem>
-        <DivNavItem selectedNavItem={props.selectedNavItems['work_history']}>
-          <LinkNavItem
-            to='#'
-            onClick={ev => props.selectNavItem(ev, 'work_history')}
-          >
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
             Work&nbsp;History
           </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['work_history']} />
         </DivNavItem>
-        <DivNavItem selectedNavItem={props.selectedNavItems['education']}>
-          <LinkNavItem
-            to='#'
-            onClick={ev => props.selectNavItem(ev, 'education')}
-          >
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'education')}>
             Education
           </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['education']} />
         </DivNavItem>
-        <DivNavItem selectedNavItem={props.selectedNavItems['skills']}>
+        <DivNavItem>
           <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'skills')}>
             Skills
           </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['skills']} />
         </DivNavItem>
-        <DivNavItem selectedNavItem={props.selectedNavItems['projects']}>
-          <LinkNavItem
-            to='#'
-            onClick={ev => props.selectNavItem(ev, 'projects')}
-          >
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'projects')}>
             Projects
           </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['projects']} />
         </DivNavItem>
       </DivNavItems>
     </DivWrapper>

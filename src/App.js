@@ -91,11 +91,7 @@ class App extends Component {
           pathname={this.props.location.pathname}
           headerScrolledOpacity={this.state.headerScrolledOpacity}
         />
-        <Route
-          exact
-          path={`${ClientUrlLinks.home}`}
-          component={UnderConstruction}
-        />
+        <Route exact path={`${ClientUrlLinks.home}`} component={UnderConstruction} />
         <Route
           exact
           path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`}
