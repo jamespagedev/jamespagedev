@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-import { Colors } from '../../../globals/CssMixins';
-import CareerSearchBar from './CareerSearchBar';
+
+// Components
+import CareerSearchBar from './CareerSearchBar.js';
+import WorkHistoryDropdown from './dropdowns/WorkHistoryDropdown.js';
+
+// Globals
+import { Colors } from '../../../globals/CssMixins.js';
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -30,6 +34,19 @@ const DivNavItems = styled.div`
   align-items: center;
 `;
 
+const DivNavItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+`;
+
+const DivSelectedBar = styled.div`
+  border-bottom: 2px solid red;
+  margin-bottom: -2px;
+  display: ${props => (props.selectedNavItem === 'true' ? 'block' : 'none')};
+`;
+
 const LinkNavItem = styled(Link)`
   display: flex;
   justify-content: center;
@@ -39,21 +56,17 @@ const LinkNavItem = styled(Link)`
   text-decoration: none;
   font-size: 24px;
   color: ${Colors.Gallary};
-
-  &:hover {
-    background: linear-gradient(
-      to bottom,
-      #cc0000 0%,
-      #cc0000 20%,
-      #821c1a 100%
-    );
-  }
+  background: ${props =>
+    props.wh_navbg === 'true' &&
+    'linear-gradient(to bottom, #cc0000 0%, #cc0000 20%, #821c1a 100%)'};
 `;
 
 /***************************************************************************************************
  ********************************************* Component *******************************************
  **************************************************************************************************/
 const CareerNav = props => {
+  console.log(props);
+  console.log(props.selectedNavItems['main']);
   return (
     <DivWrapper>
       <CareerSearchBar
@@ -62,18 +75,61 @@ const CareerNav = props => {
       />
       <DivLineSeperator />
       <DivNavItems>
-        <LinkNavItem to='#'>Main</LinkNavItem>
-        <LinkNavItem to='#'>Work&nbsp;History</LinkNavItem>
-        <LinkNavItem to='#'>Education</LinkNavItem>
-        <LinkNavItem to='#'>Skills</LinkNavItem>
-        <LinkNavItem to='#'>Projects</LinkNavItem>
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'main')}>
+            Main
+          </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['main']} />
+        </DivNavItem>
+        <DivNavItem
+          onPointerEnter={ev => (props.set_wh_dropdown(ev, true), props.set_wh_navbg(ev, true))}
+          onPointerLeave={ev => (props.set_wh_dropdown(ev, false), props.set_wh_navbg(ev, false))}
+        >
+          <LinkNavItem
+            to='#'
+            wh_navbg={props.wh_navbg.toString()}
+            onClick={ev => props.selectNavItem(ev, 'work_history')}
+          >
+            Work&nbsp;History&nbsp;
+            <i
+              style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }}
+              className='fas fa-chevron-down'
+            />
+          </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['work_history']} />
+          <div>
+            <WorkHistoryDropdown {...props} />
+          </div>
+        </DivNavItem>
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'education')}>
+            Education
+            <i
+              style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }}
+              className='fas fa-chevron-down'
+            />
+          </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['education']} />
+        </DivNavItem>
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'skills')}>
+            Skills
+          </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['skills']} />
+        </DivNavItem>
+        <DivNavItem>
+          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'projects')}>
+            Projects
+            <i
+              style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }}
+              className='fas fa-chevron-down'
+            />
+          </LinkNavItem>
+          <DivSelectedBar selectedNavItem={props.selectedNavItems['projects']} />
+        </DivNavItem>
       </DivNavItems>
     </DivWrapper>
   );
 };
-
-// CareerNav.propTypes = {
-//   propertyName: PropTypes.string
-// }
 
 export default CareerNav;
