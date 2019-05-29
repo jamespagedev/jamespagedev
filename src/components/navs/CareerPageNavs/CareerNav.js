@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { Colors } from '../../../globals/CssMixins';
-import CareerSearchBar from './CareerSearchBar';
+
+// Components
+import CareerSearchBar from './CareerSearchBar.js';
+import WorkHistoryDropdown from './dropdowns/WorkHistoryDropdown.js';
+
+// Globals
+import { Colors } from '../../../globals/CssMixins.js';
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -51,10 +56,9 @@ const LinkNavItem = styled(Link)`
   text-decoration: none;
   font-size: 24px;
   color: ${Colors.Gallary};
-
-  &:hover {
-    background: linear-gradient(to bottom, #cc0000 0%, #cc0000 20%, #821c1a 100%);
-  }
+  background: ${props =>
+    props.wh_navbg === 'true' &&
+    'linear-gradient(to bottom, #cc0000 0%, #cc0000 20%, #821c1a 100%)'};
 `;
 
 /***************************************************************************************************
@@ -77,15 +81,33 @@ const CareerNav = props => {
           </LinkNavItem>
           <DivSelectedBar selectedNavItem={props.selectedNavItems['main']} />
         </DivNavItem>
-        <DivNavItem>
-          <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
-            Work&nbsp;History
+        <DivNavItem
+          onPointerEnter={ev => (props.set_wh_dropdown(ev, true), props.set_wh_navbg(ev, true))}
+          onPointerLeave={ev => (props.set_wh_dropdown(ev, false), props.set_wh_navbg(ev, false))}
+        >
+          <LinkNavItem
+            to='#'
+            wh_navbg={props.wh_navbg.toString()}
+            onClick={ev => props.selectNavItem(ev, 'work_history')}
+          >
+            Work&nbsp;History&nbsp;
+            <i
+              style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }}
+              className='fas fa-chevron-down'
+            />
           </LinkNavItem>
           <DivSelectedBar selectedNavItem={props.selectedNavItems['work_history']} />
+          <div>
+            <WorkHistoryDropdown {...props} />
+          </div>
         </DivNavItem>
         <DivNavItem>
           <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'education')}>
             Education
+            <i
+              style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }}
+              className='fas fa-chevron-down'
+            />
           </LinkNavItem>
           <DivSelectedBar selectedNavItem={props.selectedNavItems['education']} />
         </DivNavItem>
@@ -98,6 +120,10 @@ const CareerNav = props => {
         <DivNavItem>
           <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'projects')}>
             Projects
+            <i
+              style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }}
+              className='fas fa-chevron-down'
+            />
           </LinkNavItem>
           <DivSelectedBar selectedNavItem={props.selectedNavItems['projects']} />
         </DivNavItem>

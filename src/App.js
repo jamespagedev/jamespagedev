@@ -48,7 +48,11 @@ class App extends Component {
     super(props);
     this.state = {
       headerScrolledOpacity: false,
-      selectedNavItems: origSelNavItems
+      selectedNavItems: origSelNavItems,
+      wh_navbg: false,
+      wh_dropdown: false,
+      wh_dropdown_non_tech: false,
+      wh_dropdown_tech: false
     };
   }
 
@@ -72,7 +76,26 @@ class App extends Component {
 
     // set selected item to true
     this.setState({ selectedNavItems: localSelectedNavItems });
-    console.log('selectedNavItems =', this.state.selectedNavItems);
+  };
+
+  set_wh_navbg = (ev, status) => {
+    ev.preventDefault();
+    this.setState({ wh_navbg: status });
+  };
+
+  set_wh_dropdown = (ev, status) => {
+    ev.preventDefault();
+    this.setState({ wh_dropdown: status });
+  };
+
+  set_wh_dropdown_non_tech = (ev, status) => {
+    ev.preventDefault();
+    this.setState({ wh_dropdown_non_tech: status });
+  };
+
+  set_wh_dropdown_tech = (ev, status) => {
+    ev.preventDefault();
+    this.setState({ wh_dropdown_tech: status });
   };
 
   render() {
@@ -100,6 +123,14 @@ class App extends Component {
               {...this.props}
               selectedNavItems={this.state.selectedNavItems}
               selectNavItem={this.selectNavItem}
+              set_wh_navbg={this.set_wh_navbg}
+              set_wh_dropdown={this.set_wh_dropdown}
+              set_wh_dropdown_non_tech={this.set_wh_dropdown_non_tech}
+              set_wh_dropdown_tech={this.set_wh_dropdown_tech}
+              wh_navbg={this.state.wh_navbg}
+              wh_dropdown={this.state.wh_dropdown}
+              wh_dropdown_non_tech={this.state.wh_dropdown_non_tech}
+              wh_dropdown_tech={this.state.wh_dropdown_tech}
             />
           )}
         />
