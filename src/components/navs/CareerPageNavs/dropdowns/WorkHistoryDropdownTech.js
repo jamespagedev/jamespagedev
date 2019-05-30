@@ -19,9 +19,11 @@ const DivWrapper = styled.div`
   z-index: 10;
   opacity: ${props => (props.wh_dropdown_tech === 'true' ? '1' : '0')};
   pointer-events: ${props => (props.wh_dropdown_tech === 'true' ? 'initial' : 'none')};
+  padding: 12px 0;
 `;
 
 const DivNavItem = styled.div`
+  padding: 10px 0;
   &:hover {
     border-left: 2px solid gold;
   }
@@ -42,6 +44,11 @@ const LinkNavItem = styled(Link)`
 const WorkHistoryDropdownTech = props => {
   return (
     <DivWrapper wh_dropdown_tech={props.wh_dropdown_tech.toString()}>
+      <DivNavItem>
+        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+          Lambda&nbsp;School
+        </LinkNavItem>
+      </DivNavItem>
       <DivNavItem>
         <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
           CVS&nbsp;Health

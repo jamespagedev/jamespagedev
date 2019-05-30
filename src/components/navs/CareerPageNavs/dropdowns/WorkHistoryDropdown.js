@@ -8,7 +8,7 @@ import WorkHistoryDropdownTech from './WorkHistoryDropdownTech.js';
 import WorkHistoryDropdownNonTech from './WorkHistoryDropdownNonTech.js';
 
 /***************************************************************************************************
- ********************************************** Styles *********************************************
+ ********************************************** Styles **********************************************
  **************************************************************************************************/
 const DivWrapper = styled.div`
   display: flex;
@@ -21,9 +21,12 @@ const DivWrapper = styled.div`
   z-index: 10;
   opacity: ${props => (props.wh_dropdown === 'true' ? '1' : '0')};
   pointer-events: ${props => (props.wh_dropdown === 'true' ? 'initial' : 'none')};
+  padding: 12px 0;
+  cursor: pointer;
 `;
 
 const DivNavItem = styled.div`
+  padding: 10px 0;
   &:hover {
     border-left: 2px solid gold;
   }
@@ -50,11 +53,7 @@ const WorkHistoryDropdown = props => {
           props.set_wh_navbg(ev, true),
           props.set_wh_dropdown_tech(ev, true)
         )}
-        onPointerLeave={ev => (
-          props.set_wh_dropdown(ev, false),
-          props.set_wh_navbg(ev, false),
-          props.set_wh_dropdown_tech(ev, false)
-        )}
+        onPointerLeave={ev => props.set_wh_dropdown_tech(ev, false)}
       >
         <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
           Tech&nbsp;Positions
@@ -71,11 +70,7 @@ const WorkHistoryDropdown = props => {
           props.set_wh_navbg(ev, true),
           props.set_wh_dropdown_non_tech(ev, true)
         )}
-        onPointerLeave={ev => (
-          props.set_wh_dropdown(ev, false),
-          props.set_wh_navbg(ev, false),
-          props.set_wh_dropdown_non_tech(ev, false)
-        )}
+        onPointerLeave={ev => props.set_wh_dropdown_non_tech(ev, false)}
       >
         <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
           Non-Tech&nbsp;Positions
