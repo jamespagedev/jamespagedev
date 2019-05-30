@@ -19,9 +19,11 @@ const DivWrapper = styled.div`
   z-index: 10;
   opacity: ${props => (props.wh_dropdown_non_tech === 'true' ? '1' : '0')};
   pointer-events: ${props => (props.wh_dropdown_non_tech === 'true' ? 'initial' : 'none')};
+  padding: 12px 0;
 `;
 
 const DivNavItem = styled.div`
+  padding: 10px 0;
   &:hover {
     border-left: 2px solid gold;
   }
