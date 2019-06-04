@@ -160,7 +160,6 @@ class CareerNav extends Component {
           <DivNavItem>
             <LinkNavItem to='#' onClick={ev => this.props.selectCareerNavItem(ev, 'projects')}>
               Projects
-              <i style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }} className='fas fa-chevron-down' />
             </LinkNavItem>
             <DivSelectedBar selectedNavItem={this.props.selNavItems['projects']} />
           </DivNavItem>
