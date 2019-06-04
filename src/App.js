@@ -8,15 +8,6 @@ import UnderConstruction from './pageviews/UnderConstruction';
 import { ClientUrlLinks } from './globals/Variables';
 import { Colors } from './globals/CssMixins';
 
-// local variables
-const origSelNavItems = {
-  main: 'false',
-  work_history: 'false',
-  education: 'false',
-  skills: 'false',
-  projects: 'false'
-};
-
 /***************************************************************************************************
  ********************************************** Styles **********************************************
  **************************************************************************************************/
@@ -47,55 +38,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      headerScrolledOpacity: false,
-      selectedNavItems: origSelNavItems,
-      wh_navbg: false,
-      wh_dropdown: false,
-      wh_dropdown_non_tech: false,
-      wh_dropdown_tech: false
+      headerScrolledOpacity: false
     };
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.listenScrollEvent);
+    window.addEventListener('scroll', this.listenHeaderScrollEvent);
   }
 
-  listenScrollEvent = ev => {
+  listenHeaderScrollEvent = ev => {
     ev.preventDefault();
     if (window.scrollY > 291) {
       this.setState({ headerScrolledOpacity: true });
     } else {
       this.setState({ headerScrolledOpacity: false });
     }
-  };
-
-  selectNavItem = (ev, item) => {
-    ev.preventDefault();
-    const localSelectedNavItems = Object.assign({}, origSelNavItems);
-    localSelectedNavItems[item] = 'true';
-
-    // set selected item to true
-    this.setState({ selectedNavItems: localSelectedNavItems });
-  };
-
-  set_wh_navbg = (ev, status) => {
-    ev.preventDefault();
-    this.setState({ wh_navbg: status });
-  };
-
-  set_wh_dropdown = (ev, status) => {
-    ev.preventDefault();
-    this.setState({ wh_dropdown: status });
-  };
-
-  set_wh_dropdown_non_tech = (ev, status) => {
-    ev.preventDefault();
-    this.setState({ wh_dropdown_non_tech: status });
-  };
-
-  set_wh_dropdown_tech = (ev, status) => {
-    ev.preventDefault();
-    this.setState({ wh_dropdown_tech: status });
   };
 
   render() {
@@ -115,40 +72,10 @@ class App extends Component {
           headerScrolledOpacity={this.state.headerScrolledOpacity}
         />
         <Route exact path={`${ClientUrlLinks.home}`} component={UnderConstruction} />
-        <Route
-          exact
-          path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`}
-          render={() => (
-            <CareerPage
-              {...this.props}
-              selectedNavItems={this.state.selectedNavItems}
-              selectNavItem={this.selectNavItem}
-              set_wh_navbg={this.set_wh_navbg}
-              set_wh_dropdown={this.set_wh_dropdown}
-              set_wh_dropdown_non_tech={this.set_wh_dropdown_non_tech}
-              set_wh_dropdown_tech={this.set_wh_dropdown_tech}
-              wh_navbg={this.state.wh_navbg}
-              wh_dropdown={this.state.wh_dropdown}
-              wh_dropdown_non_tech={this.state.wh_dropdown_non_tech}
-              wh_dropdown_tech={this.state.wh_dropdown_tech}
-            />
-          )}
-        />
-        <Route
-          exact
-          path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`}
-          component={UnderConstruction}
-        />
-        <Route
-          exact
-          path={`${ClientUrlLinks.home}${ClientUrlLinks.about}`}
-          component={UnderConstruction}
-        />
-        <Route
-          exact
-          path={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`}
-          component={UnderConstruction}
-        />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`} render={() => <CareerPage {...this.props} />} />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`} component={UnderConstruction} />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.about}`} component={UnderConstruction} />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} component={UnderConstruction} />
       </DivWrapper>
     );
   }

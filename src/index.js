@@ -4,9 +4,15 @@ import App from './App';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reduxstore/reducers';
+
+// reducers
+import { CareerReducer } from './reduxstore/reducers/index.js';
+
+const rootReducer = combineReducers({
+  career: CareerReducer
+});
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 

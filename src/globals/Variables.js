@@ -16,4 +16,12 @@ export const MainPageTitles = {
   contact: 'Contact'
 };
 
+export const origCareerSelNavItems = {
+  main: 'false',
+  work_history: 'false',
+  education: 'false',
+  skills: 'false',
+  projects: 'false'
+};
+
 export const CareerPageHeaderBreakLine = '409px';

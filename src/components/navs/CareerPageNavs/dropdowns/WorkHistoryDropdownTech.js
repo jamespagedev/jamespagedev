@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Globals
 import { Colors } from '../../../../globals/CssMixins.js';
+
+// Actions
+import { selectCareerNavItem } from '../../../../reduxstore/actions/index.js';
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -45,32 +49,32 @@ const WorkHistoryDropdownTech = props => {
   return (
     <DivWrapper wh_dropdown_tech={props.wh_dropdown_tech.toString()}>
       <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
           Lambda&nbsp;School
         </LinkNavItem>
       </DivNavItem>
       <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
           CVS&nbsp;Health
         </LinkNavItem>
       </DivNavItem>
       <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
           Qualcomm
         </LinkNavItem>
       </DivNavItem>
       <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
           Millennium&nbsp;Laboratories
         </LinkNavItem>
       </DivNavItem>
       <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
           San&nbsp;Bernardino&nbsp;Library
         </LinkNavItem>
       </DivNavItem>
       <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
           ITT&nbsp;Tech
         </LinkNavItem>
       </DivNavItem>
@@ -78,4 +82,13 @@ const WorkHistoryDropdownTech = props => {
   );
 };
 
-export default WorkHistoryDropdownTech;
+const mapStateToProps = state => {
+  return {
+    ...state
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { selectCareerNavItem }
+)(WorkHistoryDropdownTech);
