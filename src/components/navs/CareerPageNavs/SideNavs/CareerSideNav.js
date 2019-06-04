@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 // import PropTypes from 'prop-types';
 import { Colors } from '../../../../globals/CssMixins';
-import { CareerPageHeaderBreakLine } from '../../../../globals/Variables';
+// import { CareerPageHeaderBreakLine } from '../../../../globals/Variables';
 import TestHeightSideNav10Links from './TestHeightSideNav10Links';
 import TestHeightSideNav50Links from './TestHeightSideNav50Links';
 
@@ -54,9 +54,5 @@ const CareerSideNav = props => {
       return <DivSideNavWrapper />;
   }
 };
-
-// CareerSideNav.propTypes = {
-//   propertyName: PropTypes.string
-// }
 
 export default CareerSideNav;

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import PropTypes from 'prop-types';
-import { Colors } from '../../../globals/CssMixins';
+// import { Colors } from '../../../globals/CssMixins';
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -75,9 +74,5 @@ const CareerSearchBar = props => {
     </>
   );
 };
-
-// CareerSearchBar.propTypes = {
-//   propertyName: PropTypes.string
-// }
 
 export default CareerSearchBar;
