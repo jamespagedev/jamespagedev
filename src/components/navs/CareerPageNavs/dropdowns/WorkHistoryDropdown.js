@@ -43,6 +43,8 @@ const LinkNavItem = styled(Link)`
   text-decoration: none;
   font-size: 24px;
   color: ${Colors.Gallary};
+  user-select: none;
+  cursor: pointer;
 `;
 
 /***************************************************************************************************
@@ -53,6 +55,7 @@ const WorkHistoryDropdown = props => {
   return (
     <DivWrapper wh_dropdown={props.wh_dropdown.toString()}>
       <DivNavItem
+        onClick={ev => props.selectCareerNavItem(ev, 'work_history')}
         onPointerEnter={ev => {
           props.set_wh_dropdown(ev, true);
           props.set_wh_navbg(ev, true);
@@ -60,13 +63,14 @@ const WorkHistoryDropdown = props => {
         }}
         onPointerLeave={ev => props.set_wh_dropdown_tech(ev, false)}
       >
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           Tech&nbsp;Positions
           <i style={{ fontSize: '16px', alignSelf: 'center', marginLeft: 'auto' }} className='fas fa-chevron-right' />
         </LinkNavItem>
         <WorkHistoryDropdownTech {...props} />
       </DivNavItem>
       <DivNavItem
+        onClick={ev => props.selectCareerNavItem(ev, 'work_history')}
         onPointerEnter={ev => {
           props.set_wh_dropdown(ev, true);
           props.set_wh_navbg(ev, true);
@@ -74,7 +78,7 @@ const WorkHistoryDropdown = props => {
         }}
         onPointerLeave={ev => props.set_wh_dropdown_non_tech(ev, false)}
       >
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           Non-Tech&nbsp;Positions
           <i style={{ fontSize: '16px', alignSelf: 'center', marginLeft: 'auto' }} className='fas fa-chevron-right' />
         </LinkNavItem>
