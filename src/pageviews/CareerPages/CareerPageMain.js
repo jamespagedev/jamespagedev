@@ -166,7 +166,7 @@ const CareerPageMain = props => {
           <A_LinkedIn href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
             <ImgLinkedIn src={require('../../assets/img/linkedinbutton.png')} alt='' />
           </A_LinkedIn>
-          <A_Github href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+          <A_Github href='https://github.com/jamespagedev' target='_blank'>
             <ImgGithub src={require('../../assets/img/GithubButton.png')} alt='' />
           </A_Github>
         </DivLinkButtons>
