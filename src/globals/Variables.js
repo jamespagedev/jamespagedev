@@ -1,6 +1,13 @@
 export const ClientUrlLinks = {
   home: '/',
   career: 'career',
+  careernavs: {
+    main: 'main',
+    workhistory: 'workhistory',
+    education: 'education',
+    skills: 'skills',
+    projects: 'projects'
+  },
   hobbies: 'hobbies',
   about: 'about',
   contact: 'contact',
@@ -23,5 +30,15 @@ export const origCareerSelNavItems = {
   skills: 'false',
   projects: 'false'
 };
+
+export const resumePositions = [
+  'Test Engineer',
+  'Full-Stack Developer',
+  'Web Developer',
+  'Front End Developer',
+  'Back End Developer',
+  'Software Developer',
+  'IT/Network/System Admin'
+];
 
 export const CareerPageHeaderBreakLine = '409px';

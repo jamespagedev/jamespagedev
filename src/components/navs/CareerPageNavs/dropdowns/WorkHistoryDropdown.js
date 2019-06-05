@@ -18,7 +18,7 @@ const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
   border-top: 3px solid transparent;
-  top: 43px;
+  top: 39px;
   position: absolute;
   background: linear-gradient(to bottom, #cc0000 0%, #cc0000 20%, #821c1a 100%);
   width: 300px;

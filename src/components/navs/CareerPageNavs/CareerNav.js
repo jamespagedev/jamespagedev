@@ -20,7 +20,9 @@ import { selectCareerNavItem } from '../../../reduxstore/actions/index.js';
 const DivWrapper = styled.div`
   display: flex;
   width: 100%;
-  height: 55px;
+  min-height: 43px;
+  height: 43px;
+  max-height: 43px;
   background-color: ${Colors.Woodsmoke2};
   border-top: 2px solid ${Colors.Tundora};
   border-bottom: 2px solid ${Colors.Tundora};

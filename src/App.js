@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
+
+// Components
 import MainHeader from './components/header/MainHeader';
+import IpsumH1 from './components/IpsumH1.js';
 import CareerPage from './pageviews/CareerPages/CareerPage';
 import UnderConstruction from './pageviews/UnderConstruction';
-import { ClientUrlLinks } from './globals/Variables';
+
+// Globals
+import { ClientUrlLinks } from './globals/Variables.js';
 import { Colors } from './globals/CssMixins';
 
 /***************************************************************************************************
@@ -28,6 +33,13 @@ const GlobalStyle = createGlobalStyle`
       sans-serif, cursive;
     background-color: ${Colors.Vulcan};
     height: 100%;
+  }
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  img {
+    width: 100%;
   }
 `;
 

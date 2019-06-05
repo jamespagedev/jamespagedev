@@ -3,10 +3,13 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 // Components
-import { Colors } from '../../globals/CssMixins';
+import CareerPageMain from './CareerPageMain.js';
 import CareerNav from '../../components/navs/CareerPageNavs/CareerNav';
 import CareerSideNav from '../../components/navs/CareerPageNavs/SideNavs/CareerSideNav';
 import IpsumH1 from '../../components/IpsumH1.js';
+
+// Globals
+import { Colors } from '../../globals/CssMixins';
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -36,11 +39,7 @@ const DivTestBody = styled.div`
   min-width: 800px;
   background: ${Colors.Woodsmoke};
   color: white;
-  padding: 75px 20px;
-
-  h1 {
-    margin: 0;
-  }
+  padding: 25px 20px;
 `;
 
 /***************************************************************************************************
@@ -76,7 +75,11 @@ class CareerPage extends Component {
         <DivPageContent>
           <CareerSideNav />
           <DivTestBody>
-            <IpsumH1 />
+            {this.props.selNavItems.main == 'true' && <CareerPageMain />}
+            {this.props.selNavItems.work_history == 'true' && <IpsumH1 />}
+            {this.props.selNavItems.education == 'true' && <IpsumH1 />}
+            {this.props.selNavItems.skills == 'true' && <IpsumH1 />}
+            {this.props.selNavItems.projects == 'true' && <IpsumH1 />}
           </DivTestBody>
         </DivPageContent>
       </DivWrapper>
@@ -87,7 +90,8 @@ class CareerPage extends Component {
 const mapStateToProps = state => {
   return {
     mainPageTitles: state.mainPageTitles,
-    selectedMainPageTitle: state.selectedMainPageTitle
+    selectedMainPageTitle: state.selectedMainPageTitle,
+    selNavItems: state.career.selectedCareerNavItems
   };
 };
 
