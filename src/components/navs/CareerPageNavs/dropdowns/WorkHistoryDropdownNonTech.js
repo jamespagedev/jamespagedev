@@ -40,6 +40,8 @@ const LinkNavItem = styled(Link)`
   text-decoration: none;
   font-size: 24px;
   color: ${Colors.Gallary};
+  user-select: none;
+  cursor: pointer;
 `;
 
 /***************************************************************************************************
@@ -48,33 +50,33 @@ const LinkNavItem = styled(Link)`
 const WorkHistoryDropdownNonTech = props => {
   return (
     <DivWrapper wh_dropdown_non_tech={props.wh_dropdown_non_tech.toString()}>
-      <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           Pechanga&nbsp;Resort&nbsp;and&nbsp;Casino
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           United&nbsp;Studios&nbsp;of&nbsp;Self&nbsp;Defense
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           Jack&nbsp;Weaver&nbsp;School
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           Target
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           KFC
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem>
-        <LinkNavItem to='#' onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+        <LinkNavItem to='#' draggable='false'>
           Calvary&nbsp;Chapel&nbsp;Bible&nbsp;College
         </LinkNavItem>
       </DivNavItem>
