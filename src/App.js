@@ -5,7 +5,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 // Components
 import MainHeader from './components/header/MainHeader';
-import IpsumH1 from './components/IpsumH1.js';
 import CareerPage from './pageviews/CareerPages/CareerPage';
 import UnderConstruction from './pageviews/UnderConstruction';
 
