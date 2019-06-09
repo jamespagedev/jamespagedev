@@ -6,8 +6,8 @@ import styled from 'styled-components';
  ********************************************** Styles *********************************************
  **************************************************************************************************/
 const InputSearchBar = styled.input`
-  width: 300px;
-  min-width: 300px;
+  width: 294px;
+  min-width: 294px;
   height: 100%;
   padding: 0;
   margin: 0;
