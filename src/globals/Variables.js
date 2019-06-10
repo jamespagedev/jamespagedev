@@ -48,6 +48,7 @@ resumeWordLinks[resumePositions[2]] = 'https://drive.google.com/file/d/1u1dvVljx
 resumeWordLinks[resumePositions[3]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
 resumeWordLinks[resumePositions[4]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
 resumeWordLinks[resumePositions[5]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
+resumeWordLinks[resumePositions[6]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
 
 const CareerPageHeaderBreakLine = '409px';
 
