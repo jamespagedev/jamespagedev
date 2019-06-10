@@ -75,11 +75,11 @@ class CareerPage extends Component {
         <DivPageContent>
           <CareerSideNav />
           <DivTestBody>
-            {this.props.selNavItems.main == 'true' && <CareerPageMain />}
-            {this.props.selNavItems.work_history == 'true' && <IpsumH1 />}
-            {this.props.selNavItems.education == 'true' && <IpsumH1 />}
-            {this.props.selNavItems.skills == 'true' && <IpsumH1 />}
-            {this.props.selNavItems.projects == 'true' && <IpsumH1 />}
+            {this.props.selNavItems.main === 'true' && <CareerPageMain />}
+            {this.props.selNavItems.work_history === 'true' && <IpsumH1 />}
+            {this.props.selNavItems.education === 'true' && <IpsumH1 />}
+            {this.props.selNavItems.skills === 'true' && <IpsumH1 />}
+            {this.props.selNavItems.projects === 'true' && <IpsumH1 />}
           </DivTestBody>
         </DivPageContent>
       </DivWrapper>

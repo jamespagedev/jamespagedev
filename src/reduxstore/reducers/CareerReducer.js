@@ -1,44 +1,16 @@
-/********************************** Variables **********************************/
-import { MainPageTitles, origCareerSelNavItems } from '../../globals/Variables';
-
 /*********************************** actions ***********************************/
 import {
+  // Main
+  SELECT_RESUME_WORD_SUCCESS,
+  SELECT_RESUME_WORD_FAILURE,
+
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
-  SELECT_WORK_HISTORY_FAILURE,
-
-  // WH_Tech
-  SELECT_WH_TECH_SUCCESS,
-  SELECT_WH_TECH_FAILURE,
-  SELECT_WH_LAMBDA_SCHOOL_SUCCESS,
-  SELECT_WH_LAMBDA_SCHOOL_FAILURE,
-  SELECT_WH_CVS_HEALTH_SUCCESS,
-  SELECT_WH_CVS_HEALTH_FAILURE,
-  SELECT_WH_QUALCOMM_SUCCESS,
-  SELECT_WH_QUALCOMM_FAILURE,
-  SELECT_WH_MILLENNIUM_LABORATORIES_SUCCESS,
-  SELECT_WH_MILLENNIUM_LABORATORIES_FAILURE,
-  SELECT_WH_SB_LIBRARY_SUCCESS,
-  SELECT_WH_SB_LIBRARY_FAILURE,
-  SELECT_WH_ITT_TECH_SUCCESS,
-  SELECT_WH_ITT_TECH_FAILURE,
-
-  // WH_NON_Tech
-  SELECT_WH_NON_TECH_SUCCESS,
-  SELECT_WH_NON_TECH_FAILURE,
-  SELECT_WH_PECHANGA_SUCCESS,
-  SELECT_WH_PECHANGA_FAILURE,
-  SELECT_WH_USSD_SUCCESS,
-  SELECT_WH_USSD_FAILURE,
-  SELECT_WH_JACK_WEAVER_SCHOOL_SUCCESS,
-  SELECT_WH_JACK_WEAVER_SCHOOL_FAILURE,
-  SELECT_WH_TARGET_SUCCESS,
-  SELECT_WH_TARGET_FAILURE,
-  SELECT_WH_KFC_SUCCESS,
-  SELECT_WH_KFC_FAILURE,
-  SELECT_WH_CCBC_SUCCESS,
-  SELECT_WH_CCBC_FAILURE
+  SELECT_WORK_HISTORY_FAILURE
 } from '../actions/index.js';
+
+/********************************** Variables **********************************/
+const { MainPageTitles, origCareerSelNavItems, defaultPosition, resumeWordLinks } = require('../../globals/Variables');
 
 /************************************ State ************************************/
 const initialState = {
@@ -51,6 +23,7 @@ const initialState = {
   selectedTheme: '',
   mainPageTitles: MainPageTitles,
   selectedCareerNavItems: origCareerSelNavItems,
+  selectedWordResume: resumeWordLinks[defaultPosition],
   error: null
 };
 
@@ -65,6 +38,17 @@ export const CareerReducer = (state = initialState, action) => {
     case SELECT_WORK_HISTORY_FAILURE:
       return {
         ...state,
+        error: action.payload
+      };
+    case SELECT_RESUME_WORD_SUCCESS:
+      return {
+        ...state,
+        selectedWordResume: action.payload
+      };
+    case SELECT_RESUME_WORD_FAILURE:
+      return {
+        ...state,
+        selectedWordResume: resumeWordLinks[defaultPosition],
         error: action.payload
       };
     default:

@@ -1,4 +1,4 @@
-export const ClientUrlLinks = {
+const ClientUrlLinks = {
   home: '/',
   career: 'career',
   careernavs: {
@@ -14,7 +14,7 @@ export const ClientUrlLinks = {
   signin: 'signin'
 };
 
-export const MainPageTitles = {
+const MainPageTitles = {
   default: 'Home',
   home: 'Home',
   career: 'Career',
@@ -23,7 +23,7 @@ export const MainPageTitles = {
   contact: 'Contact'
 };
 
-export const origCareerSelNavItems = {
+const origCareerSelNavItems = {
   main: 'false',
   work_history: 'false',
   education: 'false',
@@ -31,14 +31,32 @@ export const origCareerSelNavItems = {
   projects: 'false'
 };
 
-export const resumePositions = [
-  'Test Engineer',
+const defaultPosition = 'Front End Developer';
+const resumePositions = [
+  defaultPosition,
   'Full-Stack Developer',
   'Web Developer',
-  'Front End Developer',
   'Back End Developer',
   'Software Developer',
-  'IT/Network/System Admin'
+  'IT/Network/System Admin',
+  'Test Engineer'
 ];
+const resumeWordLinks = {};
+resumeWordLinks[resumePositions[0]] = 'https://drive.google.com/file/d/1lPtYUoZm6zj9YsTSS6YuPUxhhCXbfgEQ/view?usp=sharing';
+resumeWordLinks[resumePositions[1]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
+resumeWordLinks[resumePositions[2]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
+resumeWordLinks[resumePositions[3]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
+resumeWordLinks[resumePositions[4]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
+resumeWordLinks[resumePositions[5]] = 'https://drive.google.com/file/d/1u1dvVljx80EzKWDo3fxZc7xUi2t9wolD/view?usp=sharing';
 
-export const CareerPageHeaderBreakLine = '409px';
+const CareerPageHeaderBreakLine = '409px';
+
+module.exports = {
+  ClientUrlLinks,
+  MainPageTitles,
+  origCareerSelNavItems,
+  defaultPosition,
+  resumePositions,
+  resumeWordLinks,
+  CareerPageHeaderBreakLine
+};

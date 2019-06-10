@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+
+// Actions
+import { selectResumeWordPosition } from '../../reduxstore/actions/index.js';
 
 // Globals
 import { Colors } from '../../globals/CssMixins.js';
-import { resumePositions } from '../../globals/Variables.js';
+const { resumePositions } = require('../../globals/Variables.js');
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -64,7 +68,7 @@ const DivResumeButtons = styled.div`
   justify-content: space-around;
 `;
 
-const A_WordDownload = styled.a`
+const AWordDownload = styled.a`
   width: 303px;
   padding: 10px;
 
@@ -75,7 +79,7 @@ const A_WordDownload = styled.a`
   }
 `;
 
-const A_PdfDownload = styled.a`
+const APdfDownload = styled.a`
   width: 303px;
   padding: 10px;
 
@@ -102,7 +106,7 @@ const DivLinkButtons = styled.div`
   justify-content: space-around;
 `;
 
-const A_LinkedIn = styled.a`
+const ALinkedIn = styled.a`
   width: 303px;
   padding: 10px;
   margin-left: -35px;
@@ -114,7 +118,7 @@ const A_LinkedIn = styled.a`
   }
 `;
 
-const A_Github = styled.a`
+const AGithub = styled.a`
   width: 150px;
   padding: 10px;
   margin-right: 40px;
@@ -146,7 +150,7 @@ const CareerPageMain = props => {
       <DivMain>
         <DivResume>
           <H3DownloadResume>Download&nbsp;Resume</H3DownloadResume>
-          <SelectPosition>
+          <SelectPosition onChange={ev => props.selectResumeWordPosition(ev, ev.target.value)}>
             {resumePositions.map((position, i) => (
               <OptionPosition key={i} value={position}>
                 {position}
@@ -154,25 +158,34 @@ const CareerPageMain = props => {
             ))}
           </SelectPosition>
           <DivResumeButtons>
-            <A_WordDownload href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+            <AWordDownload href={props.selectedWordResume} target='_blank'>
               <ImgWord src={require('../../assets/img/WordButton.png')} alt='' />
-            </A_WordDownload>
-            <A_PdfDownload href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+            </AWordDownload>
+            <APdfDownload href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
               <ImgPdf src={require('../../assets/img/PdfButton.png')} alt='' />
-            </A_PdfDownload>
+            </APdfDownload>
           </DivResumeButtons>
         </DivResume>
         <DivLinkButtons>
-          <A_LinkedIn href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+          <ALinkedIn href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
             <ImgLinkedIn src={require('../../assets/img/linkedinbutton.png')} alt='' />
-          </A_LinkedIn>
-          <A_Github href='https://github.com/jamespagedev' target='_blank'>
+          </ALinkedIn>
+          <AGithub href='https://github.com/jamespagedev' target='_blank'>
             <ImgGithub src={require('../../assets/img/GithubButton.png')} alt='' />
-          </A_Github>
+          </AGithub>
         </DivLinkButtons>
       </DivMain>
     </DivWrapper>
   );
 };
 
-export default CareerPageMain;
+const mapStateToProps = state => {
+  return {
+    selectedWordResume: state.career.selectedWordResume
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { selectResumeWordPosition }
+)(CareerPageMain);

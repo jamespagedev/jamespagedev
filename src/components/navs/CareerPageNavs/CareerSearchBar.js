@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { Colors } from '../../../globals/CssMixins';
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
  **************************************************************************************************/
 const InputSearchBar = styled.input`
-  width: 300px;
-  min-width: 300px;
+  width: 294px;
+  min-width: 294px;
   height: 100%;
   padding: 0;
   margin: 0;

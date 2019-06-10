@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Colors } from '../../globals/CssMixins';
-import { MainPageTitles, ClientUrlLinks } from '../../globals/Variables';
-// import PropTypes from 'prop-types';
+const { MainPageTitles, ClientUrlLinks } = require('../../globals/Variables.js');
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -30,14 +29,9 @@ const LinkHome = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   padding: 0 10.9px;
-  color: ${props =>
-    props.selectedmainheaderpage === 'true' ? `blue` : `white`};
-  text-decoration: ${props =>
-    props.selectedmainheaderpage === 'true' ? `underline` : `none`};
-  text-shadow: ${props =>
-    props.selectedmainheaderpage === 'true'
-      ? `none`
-      : `2px 3px rgba(0, 0, 0, 0.4);`};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `blue` : `white`)};
+  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
+  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
 
   &:hover {
     transition: all 0.2s ease-in;
@@ -53,14 +47,9 @@ const LinkCareer = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   padding: 0 10.9px;
-  color: ${props =>
-    props.selectedmainheaderpage === 'true' ? `red` : `white`};
-  text-decoration: ${props =>
-    props.selectedmainheaderpage === 'true' ? `underline` : `none`};
-  text-shadow: ${props =>
-    props.selectedmainheaderpage === 'true'
-      ? `none`
-      : `2px 3px rgba(0, 0, 0, 0.4);`};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `red` : `white`)};
+  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
+  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
 
   &:hover {
     transition: all 0.2s ease-in;
@@ -76,14 +65,9 @@ const LinkHobbies = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   padding: 0 10.9px;
-  color: ${props =>
-    props.selectedmainheaderpage === 'true' ? `green` : `white`};
-  text-decoration: ${props =>
-    props.selectedmainheaderpage === 'true' ? `underline` : `none`};
-  text-shadow: ${props =>
-    props.selectedmainheaderpage === 'true'
-      ? `none`
-      : `2px 3px rgba(0, 0, 0, 0.4);`};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `green` : `white`)};
+  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
+  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
 
   &:hover {
     transition: all 0.2s ease-in;
@@ -99,14 +83,9 @@ const LinkAbout = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   padding: 0 10.9px;
-  color: ${props =>
-    props.selectedmainheaderpage === 'true' ? `orange` : `white`};
-  text-decoration: ${props =>
-    props.selectedmainheaderpage === 'true' ? `underline` : `none`};
-  text-shadow: ${props =>
-    props.selectedmainheaderpage === 'true'
-      ? `none`
-      : `2px 3px rgba(0, 0, 0, 0.4);`};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `orange` : `white`)};
+  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
+  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
 
   &:hover {
     transition: all 0.2s ease-in;
@@ -122,14 +101,9 @@ const LinkContact = styled(Link)`
   font-size: 24px;
   font-weight: bold;
   padding: 0 10.9px;
-  color: ${props =>
-    props.selectedmainheaderpage === 'true' ? `brown` : `white`};
-  text-decoration: ${props =>
-    props.selectedmainheaderpage === 'true' ? `underline` : `none`};
-  text-shadow: ${props =>
-    props.selectedmainheaderpage === 'true'
-      ? `none`
-      : `2px 3px rgba(0, 0, 0, 0.4);`};
+  color: ${props => (props.selectedmainheaderpage === 'true' ? `brown` : `white`)};
+  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
+  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
 
   &:hover {
     transition: all 0.2s ease-in;
@@ -220,45 +194,35 @@ const MainHeaderNav = props => {
     <DivWrapper>
       <Nav>
         <LinkHome
-          selectedmainheaderpage={(
-            props.pathname === ClientUrlLinks.home
-          ).toString()}
+          selectedmainheaderpage={(props.pathname === ClientUrlLinks.home).toString()}
           mainheaderpage={`${MainPageTitles.home}`}
           to={`${props.home}`}
         >
           Home
         </LinkHome>
         <LinkCareer
-          selectedmainheaderpage={props.pathname
-            .includes(ClientUrlLinks.career)
-            .toString()}
+          selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.career).toString()}
           mainheaderpage={`${MainPageTitles.career}`}
           to={`${props.careerLink}`}
         >
           Career
         </LinkCareer>
         <LinkHobbies
-          selectedmainheaderpage={props.pathname
-            .includes(ClientUrlLinks.hobbies)
-            .toString()}
+          selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.hobbies).toString()}
           mainheaderpage={`${MainPageTitles.hobbies}`}
           to={`${props.hobbiesLink}`}
         >
           Hobbies
         </LinkHobbies>
         <LinkAbout
-          selectedmainheaderpage={props.pathname
-            .includes(ClientUrlLinks.about)
-            .toString()}
+          selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.about).toString()}
           mainheaderpage={`${MainPageTitles.about}`}
           to={`${props.aboutLink}`}
         >
           About
         </LinkAbout>
         <LinkContact
-          selectedmainheaderpage={props.pathname
-            .includes(ClientUrlLinks.contact)
-            .toString()}
+          selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.contact).toString()}
           mainheaderpage={`${MainPageTitles.contact}`}
           to={`${props.contactLink}`}
         >
@@ -270,9 +234,5 @@ const MainHeaderNav = props => {
     </DivWrapper>
   );
 };
-
-// MainHeaderNav.propTypes = {
-//   propertyName: PropTypes.string
-// }
 
 export default MainHeaderNav;
