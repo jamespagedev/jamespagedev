@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 
 // Globals
 import { Colors } from '../../../../globals/CssMixins.js';
-import WorkHistoryDropdownTech from './WorkHistoryDropdownTech.js';
-import WorkHistoryDropdownNonTech from './WorkHistoryDropdownNonTech.js';
 
 // Actions
 import { selectCareerNavItem } from '../../../../reduxstore/actions/index.js';

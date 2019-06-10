@@ -9,8 +9,8 @@ import CareerPage from './pageviews/CareerPages/CareerPage';
 import UnderConstruction from './pageviews/UnderConstruction';
 
 // Globals
-import { ClientUrlLinks } from './globals/Variables.js';
 import { Colors } from './globals/CssMixins';
+const { ClientUrlLinks } = require('./globals/Variables.js');
 
 /***************************************************************************************************
  ********************************************** Styles **********************************************

@@ -51,7 +51,6 @@ const LinkNavItem = styled(Link)`
  ********************************************* Component *******************************************
  **************************************************************************************************/
 const WorkHistoryDropdown = props => {
-  console.log('WorkHistoryDropdown', props);
   return (
     <DivWrapper wh_dropdown={props.wh_dropdown.toString()}>
       <DivNavItem

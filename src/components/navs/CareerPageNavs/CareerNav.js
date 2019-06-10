@@ -159,8 +159,6 @@ class CareerNav extends Component {
   };
 
   render() {
-    console.log('CareerNav', this.props);
-    console.log('CareerNav', this.state);
     return (
       <DivWrapper>
         <CareerSearchBar searchText={this.props.searchText} setCareerSearchResults={this.props.setCareerSearchResults} />
