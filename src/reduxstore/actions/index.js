@@ -1,15 +1,23 @@
 /********************************************* Career *********************************************/
 import {
   // Main
+
+  // Career Nav Item
+  SELECT_CAREER_NAV_ITEM_SUCCESS,
+  SELECT_CAREER_NAV_ITEM_FAILURE,
+
+  // Resume
   SELECT_RESUME_WORD_SUCCESS,
   SELECT_RESUME_WORD_FAILURE,
+
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
   SELECT_WORK_HISTORY_FAILURE,
 
   // Functions
   selectCareerNavItem,
-  selectResumeWordPosition
+  selectResumeWordPosition,
+  selectWorkHistoryNavItem
 } from './CareerActions.js';
 
 //*************************************************************************************************
@@ -20,12 +28,21 @@ import {
 
 export {
   // Main
+
+  // Career Nav Item
+  SELECT_CAREER_NAV_ITEM_SUCCESS,
+  SELECT_CAREER_NAV_ITEM_FAILURE,
+
+  // Resume
   SELECT_RESUME_WORD_SUCCESS,
   SELECT_RESUME_WORD_FAILURE,
+
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
   SELECT_WORK_HISTORY_FAILURE,
+
   // Functions
   selectCareerNavItem,
-  selectResumeWordPosition
+  selectResumeWordPosition,
+  selectWorkHistoryNavItem
 };

@@ -23,13 +23,40 @@ const MainPageTitles = {
   contact: 'Contact'
 };
 
+const careerNavItemNames = {
+  main: 'main',
+  resume: 'resume',
+  work_history: 'work_history',
+  education: 'education',
+  skills: 'skills',
+  projects: 'projects',
+}
+
 const origCareerSelNavItems = {
-  main: 'false',
+  main: 'true',
+  resume: 'false',
   work_history: 'false',
   education: 'false',
   skills: 'false',
   projects: 'false'
 };
+
+const origWorkHistoryNavItems = {
+  main: 'false',
+  techPositions: 'false',
+  lambdaSchool: 'false',
+  cvsHealth: 'false',
+  qualcomm: 'false',
+  millenniumLaboratories: 'false',
+  sanBernadinoLibrary: 'false',
+  ittTech: 'false',
+  nonTechPositions: 'false',
+  pechangaResortAndCasino: 'false',
+  unitedStudiosOfSelfDefense: 'false',
+  jackWeaverSchool: 'false',
+  target: 'false',
+  calveryChapelBibleCollege: 'false',
+}
 
 const defaultPosition = 'Front End Developer';
 const resumePositions = [
@@ -55,7 +82,9 @@ const CareerPageHeaderBreakLine = '409px';
 module.exports = {
   ClientUrlLinks,
   MainPageTitles,
+  careerNavItemNames,
   origCareerSelNavItems,
+  origWorkHistoryNavItems,
   defaultPosition,
   resumePositions,
   resumeWordLinks,

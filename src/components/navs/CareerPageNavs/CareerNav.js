@@ -12,7 +12,7 @@ import EducationDropdown from './dropdowns/EducationDropdown.js';
 import { Colors } from '../../../globals/CssMixins.js';
 
 // actions
-import { selectCareerNavItem } from '../../../reduxstore/actions/index.js';
+import { selectCareerNavItem, selectWorkHistoryNavItem } from '../../../reduxstore/actions/index.js';
 
 /***************************************************************************************************
  ********************************************** Styles **********************************************
@@ -165,10 +165,10 @@ class CareerNav extends Component {
         <DivLineSeperator />
         <DivNavItems>
           <DivNavItem>
-            <LinkNavItem to='#' draggable='false' onClick={ev => this.props.selectCareerNavItem(ev, 'main')}>
-              Main
+            <LinkNavItem to='#' draggable='false' onClick={ev => this.props.selectCareerNavItem(ev, 'resume')}>
+              Resume
             </LinkNavItem>
-            <DivSelectedBar selectedNavItem={this.props.selNavItems['main']} />
+            <DivSelectedBar selectedNavItem={this.props.selNavItems['resume']} />
           </DivNavItem>
           <DivNavItem
             onPointerEnter={ev => {
@@ -184,7 +184,7 @@ class CareerNav extends Component {
               to='#'
               draggable='false'
               wh_navbg={this.state.wh_navbg.toString()}
-              onClick={ev => this.props.selectCareerNavItem(ev, 'work_history')}
+              onClick={ev => {this.props.selectCareerNavItem(ev, 'work_history'); this.props.selectWorkHistoryNavItem(ev,'main');}}
             >
               Work&nbsp;History&nbsp;
               <i style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }} className='fas fa-chevron-down' />
@@ -259,5 +259,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { selectCareerNavItem }
+  { selectCareerNavItem, selectWorkHistoryNavItem }
 )(CareerNav);

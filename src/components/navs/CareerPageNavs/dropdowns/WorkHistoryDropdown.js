@@ -5,15 +5,14 @@ import { connect } from 'react-redux';
 
 // Globals
 import { Colors } from '../../../../globals/CssMixins.js';
+import { careerNavItemNames } from '../../../../globals/Variables.js';
 import WorkHistoryDropdownTech from './WorkHistoryDropdownTech.js';
 import WorkHistoryDropdownNonTech from './WorkHistoryDropdownNonTech.js';
 
 // Actions
-import { selectCareerNavItem } from '../../../../reduxstore/actions/index.js';
+import { selectCareerNavItem, selectWorkHistoryNavItem } from '../../../../reduxstore/actions/index.js';
 
-/***************************************************************************************************
- ********************************************** Styles **********************************************
- **************************************************************************************************/
+/******************************************** Styles ********************************************/
 const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,14 +46,12 @@ const LinkNavItem = styled(Link)`
   cursor: pointer;
 `;
 
-/***************************************************************************************************
- ********************************************* Component *******************************************
- **************************************************************************************************/
+/******************************************* Component ******************************************/
 const WorkHistoryDropdown = props => {
   return (
     <DivWrapper wh_dropdown={props.wh_dropdown.toString()}>
       <DivNavItem
-        onClick={ev => props.selectCareerNavItem(ev, 'work_history')}
+        onClick={ev => { props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'techPositions');}}
         onPointerEnter={ev => {
           props.set_wh_dropdown(ev, true);
           props.set_wh_navbg(ev, true);
@@ -69,7 +66,7 @@ const WorkHistoryDropdown = props => {
         <WorkHistoryDropdownTech {...props} />
       </DivNavItem>
       <DivNavItem
-        onClick={ev => props.selectCareerNavItem(ev, 'work_history')}
+        onClick={ev => { props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'nonTechPositions');}}
         onPointerEnter={ev => {
           props.set_wh_dropdown(ev, true);
           props.set_wh_navbg(ev, true);
@@ -95,5 +92,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { selectCareerNavItem }
+  { selectCareerNavItem, selectWorkHistoryNavItem }
 )(WorkHistoryDropdown);

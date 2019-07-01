@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 // Globals
 import { Colors } from '../../../../globals/CssMixins.js';
+import { careerNavItemNames } from '../../../../globals/Variables.js';
 
 // Actions
 import { selectCareerNavItem } from '../../../../reduxstore/actions/index.js';
@@ -50,32 +51,32 @@ const LinkNavItem = styled(Link)`
 const WorkHistoryDropdownTech = props => {
   return (
     <DivWrapper wh_dropdown_tech={props.wh_dropdown_tech.toString()}>
-      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => {props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'lambdaSchool');}}>
         <LinkNavItem to='#' draggable='false'>
           Lambda&nbsp;School
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => {props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'cvsHealth');}}>
         <LinkNavItem to='#' draggable='false'>
           CVS&nbsp;Health
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => {props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'qualcomm');}}>
         <LinkNavItem to='#' draggable='false'>
           Qualcomm
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => {props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'millenniumLaboratories');}}>
         <LinkNavItem to='#' draggable='false'>
           Millennium&nbsp;Laboratories
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => {props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'sanBernadinoLibrary');}}>
         <LinkNavItem to='#' draggable='false'>
           San&nbsp;Bernardino&nbsp;Library
         </LinkNavItem>
       </DivNavItem>
-      <DivNavItem onClick={ev => props.selectCareerNavItem(ev, 'work_history')}>
+      <DivNavItem onClick={ev => {props.selectCareerNavItem(ev, careerNavItemNames['work_history']); props.selectWorkHistoryNavItem(ev,'ittTech');}}>
         <LinkNavItem to='#' draggable='false'>
           ITT&nbsp;Tech
         </LinkNavItem>

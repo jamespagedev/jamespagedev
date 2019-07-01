@@ -1,30 +1,39 @@
 // Globals
-const { resumeWordLinks, origCareerSelNavItems } = require('../../globals/Variables.js');
+const { resumeWordLinks, origCareerSelNavItems, origWorkHistoryNavItems } = require('../../globals/Variables.js');
 
 /***************************************************************************************************
  ********************************************* Actions *******************************************
  **************************************************************************************************/
 // Main
+
+// Career Nav Item
+export const SELECT_CAREER_NAV_ITEM_SUCCESS = 'SELECT_CAREER_NAV_ITEM_SUCCESS';
+export const SELECT_CAREER_NAV_ITEM_FAILURE = 'SELECT_CAREER_NAV_ITEM_FAILURE';
+
+// Resume
 export const SELECT_RESUME_WORD_SUCCESS = 'SELECT_RESUME_WORD_SUCCESS';
 export const SELECT_RESUME_WORD_FAILURE = 'SELECT_RESUME_WORD_FAILURE';
 
-// Work History
+// Work History Sub
 export const SELECT_WORK_HISTORY_SUCCESS = 'SELECT_WORK_HISTORY_SUCCESS';
 export const SELECT_WORK_HISTORY_FAILURE = 'SELECT_WORK_HISTORY_FAILURE';
+
 
 /***************************************************************************************************
  ****************************************** Action Creators ****************************************
  **************************************************************************************************/
 export const selectCareerNavItem = (ev, item) => dispatch => {
   ev.preventDefault();
+  ev.stopPropagation();
   let careerSelNavItems = Object.assign({}, origCareerSelNavItems);
+  careerSelNavItems['main'] = 'false';
   careerSelNavItems[item] = 'true';
 
   return Promise.resolve(careerSelNavItems)
     .then(response => {
-      dispatch({ type: SELECT_WORK_HISTORY_SUCCESS, payload: response });
+      dispatch({ type: SELECT_CAREER_NAV_ITEM_SUCCESS, payload: response });
     })
-    .catch(err => dispatch({ type: SELECT_WORK_HISTORY_FAILURE, payload: err }));
+    .catch(err => dispatch({ type: SELECT_CAREER_NAV_ITEM_FAILURE, payload: err }));
 };
 
 export const selectResumeWordPosition = (ev, position) => dispatch => {
@@ -35,4 +44,17 @@ export const selectResumeWordPosition = (ev, position) => dispatch => {
       dispatch({ type: SELECT_RESUME_WORD_SUCCESS, payload: wordLinks[position] });
     })
     .catch(err => dispatch({ type: SELECT_RESUME_WORD_FAILURE, payload: err }));
+};
+
+export const selectWorkHistoryNavItem = (ev, item) => dispatch => {
+  ev.preventDefault();
+  ev.stopPropagation();
+  let workHistoryNavItems = Object.assign({}, origWorkHistoryNavItems);
+  workHistoryNavItems[item] = 'true';
+
+  return Promise.resolve(workHistoryNavItems)
+    .then(response => {
+      dispatch({ type: SELECT_WORK_HISTORY_SUCCESS, payload: response });
+    })
+    .catch(err => dispatch({ type: SELECT_WORK_HISTORY_FAILURE, payload: err }));
 };
