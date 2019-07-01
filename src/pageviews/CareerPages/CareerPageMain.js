@@ -146,10 +146,10 @@ const ImgGithub = styled.img`
 const CareerPageMain = props => {
   return (
     <DivWrapper>
-      <H1Title>Main</H1Title>
+      <H1Title>Resume</H1Title>
       <DivMain>
         <DivResume>
-          <H3DownloadResume>Download&nbsp;Resume</H3DownloadResume>
+          <H3DownloadResume>View&nbsp;Resume</H3DownloadResume>
           <SelectPosition onChange={ev => props.selectResumeWordPosition(ev, ev.target.value)}>
             {resumePositions.map((position, i) => (
               <OptionPosition key={i} value={position}>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 // Components
 import CareerPageMain from './CareerPageMain.js';
+import CareerPageWorkHistory from './CareerPageWorkHistory.js';
 import CareerNav from '../../components/navs/CareerPageNavs/CareerNav';
 import CareerSideNav from '../../components/navs/CareerPageNavs/SideNavs/CareerSideNav';
 import IpsumH1 from '../../components/IpsumH1.js';
@@ -54,7 +55,6 @@ class CareerPage extends Component {
   }
 
   handleChange = e => {
-    console.log(this.props);
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -75,8 +75,9 @@ class CareerPage extends Component {
         <DivPageContent>
           <CareerSideNav />
           <DivTestBody>
-            {this.props.selNavItems.main === 'true' && <CareerPageMain />}
-            {this.props.selNavItems.work_history === 'true' && <IpsumH1 />}
+            {this.props.selNavItems.main === 'true' && <IpsumH1 />}
+            {this.props.selNavItems.resume === 'true' && <CareerPageMain />}
+            {this.props.selNavItems.work_history === 'true' && <CareerPageWorkHistory />}
             {this.props.selNavItems.education === 'true' && <IpsumH1 />}
             {this.props.selNavItems.skills === 'true' && <IpsumH1 />}
             {this.props.selNavItems.projects === 'true' && <IpsumH1 />}

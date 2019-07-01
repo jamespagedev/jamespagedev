@@ -1,16 +1,22 @@
 /*********************************** actions ***********************************/
 import {
   // Main
+
+  // Career Nav Item
+  SELECT_CAREER_NAV_ITEM_SUCCESS,
+  SELECT_CAREER_NAV_ITEM_FAILURE,
+
+  // Resume
   SELECT_RESUME_WORD_SUCCESS,
   SELECT_RESUME_WORD_FAILURE,
 
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
-  SELECT_WORK_HISTORY_FAILURE
+  SELECT_WORK_HISTORY_FAILURE,
 } from '../actions/index.js';
 
 /********************************** Variables **********************************/
-const { MainPageTitles, origCareerSelNavItems, defaultPosition, resumeWordLinks } = require('../../globals/Variables');
+const { MainPageTitles, origCareerSelNavItems, origWorkHistoryNavItems, defaultPosition, resumeWordLinks } = require('../../globals/Variables');
 
 /************************************ State ************************************/
 const initialState = {
@@ -24,18 +30,19 @@ const initialState = {
   mainPageTitles: MainPageTitles,
   selectedCareerNavItems: origCareerSelNavItems,
   selectedWordResume: resumeWordLinks[defaultPosition],
+  selectedWorkHistoryNavItems: origWorkHistoryNavItems,
   error: null
 };
 
 /*********************************** Reducers **********************************/
 export const CareerReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SELECT_WORK_HISTORY_SUCCESS:
+    case SELECT_CAREER_NAV_ITEM_SUCCESS:
       return {
         ...state,
         selectedCareerNavItems: action.payload
       };
-    case SELECT_WORK_HISTORY_FAILURE:
+    case SELECT_CAREER_NAV_ITEM_FAILURE:
       return {
         ...state,
         error: action.payload
@@ -49,6 +56,16 @@ export const CareerReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedWordResume: resumeWordLinks[defaultPosition],
+        error: action.payload
+      };
+    case SELECT_WORK_HISTORY_SUCCESS:
+      return {
+        ...state,
+        selectedWorkHistoryNavItems: action.payload
+      };
+    case SELECT_WORK_HISTORY_FAILURE:
+      return {
+        ...state,
         error: action.payload
       };
     default:
