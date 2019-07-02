@@ -2,13 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 /********************************************** Styles ********************************************/
-const DivWrapper = styled.div``;
+const DivWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const USSDImg = styled.img`
+  width: 60%;
+`;
 
 /********************************************* Component ******************************************/
 const UnitedStudiosOfSelfDefense = props => {
   return (
     <DivWrapper>
-      <h1>This is the UnitedStudiosOfSelfDefense component</h1>
+      <USSDImg src={require('../../../../assets/img/USSDLogo.svg')} alt='' />
     </DivWrapper>
   );
 };
