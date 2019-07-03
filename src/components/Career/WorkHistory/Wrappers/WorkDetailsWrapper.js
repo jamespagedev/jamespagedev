@@ -109,7 +109,7 @@ const WorkDetailsWrapper = props => {
       <h3>Manager(s): {props.workDetails.managers.map((manager, i) => i === props.workDetails.managers.length - 1 ? <SpanManager key={i}>{manager}</SpanManager> : <SpanManager key={i}>{manager} | </SpanManager>)}</h3>
       <h3>Phone Number: <SpanPhoneNumber>{props.workDetails.phonenumber}</SpanPhoneNumber></h3>
       {props.workDetails.websites[0].includes("http") ? (
-        <h3>Website(s): {props.workDetails.websites.map((website, i) => i === props.workDetails.websites.length - 1 ? <AWebsite href={website} target="_blank" key={i}>{website}</AWebsite> : <AWebsite href={website} target="_blank" key={i}>{website} | </AWebsite>)}</h3>
+        <h3>Website(s): {props.workDetails.websites.map((website, i) => i === props.workDetails.websites.length - 1 ? <AWebsite href={website} target="_blank" rel="noopener noreferrer" key={i}>{website}</AWebsite> : <AWebsite href={website} target="_blank" rel="noopener noreferrer" key={i}>{website} | </AWebsite>)}</h3>
       ) : (
         <h3>Website(s): <SpanNonWebsite>{props.workDetails.websites[0]}</SpanNonWebsite></h3>
       )}

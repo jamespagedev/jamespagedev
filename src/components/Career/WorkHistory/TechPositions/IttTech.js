@@ -15,8 +15,11 @@ const workDetails = {
   websites: ["No longer available"],
   reasonforleaving: "Graduating and continuing education over in San Diego",
   workresponsibilities: [
-    "Develop GUI Application to use ldap filter when querying Domains in Active Directory for user profiles.",
-    "Write Powershell scripts for automating backend tasks; Active Directory, Merging Domains, Excel Reports, Mapping Data, and other on-demand IT tasks"
+    "Direct college students on how to use the computers (hardware and software).",
+    "Help Faculty with anything IT related.",
+    "Assist boss with record collection, making student awards, and organizing the library.",
+    "Upgraded computers hardware and software as needed.",
+    "Build computers for the labs."
   ],
 }
 
