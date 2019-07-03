@@ -1,14 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Components
+import OperatingSystems from './OperatingSystems.js'
+import Languages from './Languages.js'
+
+// Globals
+import { Colors } from '../../../globals/CssMixins.js';
+
 /********************************************** Styles ********************************************/
-const DivWrapper = styled.div``;
+const DivWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: ${Colors.darkerCodGray};
+  border-radius: 25px;
+  margin-bottom: 25px;
+`;
+
+const H2Title = styled.h2`
+text-decoration: underline;
+`;
 
 /********************************************* Component ******************************************/
 const TechSkillsUsed = props => {
   return (
     <DivWrapper>
-      <h1>This is the TechSkillsUsed component</h1>
+      <H2Title>Skills&nbsp;Used</H2Title>
+      <OperatingSystems used />
+      <Languages used />
     </DivWrapper>
   );
 };

@@ -160,7 +160,7 @@ const MainHeaderNav = props => {
           selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.career).toString()}
           mainheaderpage={`${MainPageTitles.career}`}
           to={`${props.careerLink}`}
-          onClick={ev => props.resetState(ev)}
+          onClick={props.resetState}
         >
           Career
         </LinkCareer>

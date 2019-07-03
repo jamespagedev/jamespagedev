@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Components
+import TechSkillsUsed from '../../components/Career/TechSkills/TechSkillsUsed.js';
+import TechSkillsToLearn from '../../components/Career/TechSkills/TechSkillsToLearn.js';
+
 /********************************************** Styles ********************************************/
 const DivWrapper = styled.div`
 display: flex;
@@ -20,6 +24,8 @@ const CareerPageTechSkills = props => {
   return (
     <DivWrapper>
       <H1Title>Tech Skills</H1Title>
+      <TechSkillsUsed />
+      <TechSkillsToLearn />
     </DivWrapper>
   );
 };
