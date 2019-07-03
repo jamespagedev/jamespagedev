@@ -235,7 +235,7 @@ class CareerNav extends Component {
           </DivNavItem>
           <DivNavItem>
             <LinkNavItem to='#' draggable='false' onClick={ev => this.props.selectCareerNavItem(ev, 'skills')}>
-              Skills
+              Tech&nbsp;Skills
             </LinkNavItem>
             <DivSelectedBar selectedNavItem={this.props.selNavItems['skills']} />
           </DivNavItem>

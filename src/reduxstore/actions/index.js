@@ -1,5 +1,8 @@
 /********************************************* Career *********************************************/
 import {
+  // Reset State To Initial
+  RESET_INITIAL_STATE,
+
   // Main
 
   // Career Nav Item
@@ -15,6 +18,7 @@ import {
   SELECT_WORK_HISTORY_FAILURE,
 
   // Functions
+  resetState,
   selectCareerNavItem,
   selectResumeWordPosition,
   selectWorkHistoryNavItem
@@ -27,6 +31,9 @@ import {
 //*************************************************************************************************
 
 export {
+  // Reset State To Initial
+  RESET_INITIAL_STATE,
+
   // Main
 
   // Career Nav Item
@@ -42,6 +49,7 @@ export {
   SELECT_WORK_HISTORY_FAILURE,
 
   // Functions
+  resetState,
   selectCareerNavItem,
   selectResumeWordPosition,
   selectWorkHistoryNavItem
