@@ -27,7 +27,6 @@ export const SELECT_WORK_HISTORY_FAILURE = 'SELECT_WORK_HISTORY_FAILURE';
  **************************************************************************************************/
 export const resetState = (ev) => dispatch => {
   ev.preventDefault();
-  console.log('reset');
   dispatch({ type: RESET_INITIAL_STATE});
 }
 

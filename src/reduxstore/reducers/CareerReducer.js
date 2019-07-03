@@ -41,7 +41,21 @@ const initialState = {
 export const CareerReducer = (state = initialState, action) => {
   switch (action.type) {
     case RESET_INITIAL_STATE:
-      return {state};
+      return {
+        ...state,
+        themes: {
+          spring: 'Spring',
+          summer: 'Summer',
+          fall: 'Fall',
+          winter: 'Winter'
+        },
+        selectedTheme: '',
+        mainPageTitles: MainPageTitles,
+        selectedCareerNavItems: origCareerSelNavItems,
+        selectedWordResume: resumeWordLinks[defaultPosition],
+        selectedWorkHistoryNavItems: origWorkHistoryNavItems,
+        error: null
+      };
     case SELECT_CAREER_NAV_ITEM_SUCCESS:
       return {
         ...state,
