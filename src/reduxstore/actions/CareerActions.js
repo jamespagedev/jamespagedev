@@ -4,6 +4,9 @@ const { resumeWordLinks, origCareerSelNavItems, origWorkHistoryNavItems } = requ
 /***************************************************************************************************
  ********************************************* Actions *******************************************
  **************************************************************************************************/
+// Reset State To Initials
+export const RESET_INITIAL_STATE = 'RESET_INITIAL_STATE';
+
 // Main
 
 // Career Nav Item
@@ -22,6 +25,12 @@ export const SELECT_WORK_HISTORY_FAILURE = 'SELECT_WORK_HISTORY_FAILURE';
 /***************************************************************************************************
  ****************************************** Action Creators ****************************************
  **************************************************************************************************/
+export const resetState = (ev) => dispatch => {
+  ev.preventDefault();
+  console.log('reset');
+  dispatch({ type: RESET_INITIAL_STATE});
+}
+
 export const selectCareerNavItem = (ev, item) => dispatch => {
   ev.preventDefault();
   ev.stopPropagation();

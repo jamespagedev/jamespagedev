@@ -1,5 +1,8 @@
 /*********************************** actions ***********************************/
 import {
+  // Reset State To Initial
+  RESET_INITIAL_STATE,
+
   // Main
 
   // Career Nav Item
@@ -37,6 +40,8 @@ const initialState = {
 /*********************************** Reducers **********************************/
 export const CareerReducer = (state = initialState, action) => {
   switch (action.type) {
+    case RESET_INITIAL_STATE:
+      return {state};
     case SELECT_CAREER_NAV_ITEM_SUCCESS:
       return {
         ...state,

@@ -1,8 +1,17 @@
+// Libraries
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Colors } from '../../globals/CssMixins';
+
+// Actions
+import { resetState } from '../../reduxstore/actions/index.js'
+
+// Globals
 const { MainPageTitles, ClientUrlLinks } = require('../../globals/Variables.js');
+
+
 
 /***************************************************************************************************
  ********************************************** Styles *********************************************
@@ -112,59 +121,6 @@ const LinkContact = styled(Link)`
   }
 `;
 
-// const LinkNavItem = styled(Link)`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   font-size: 24px;
-//   font-weight: bold;
-//   padding: 0 10.9px;
-//   color: ${props =>
-//     props.selectedmainheaderpage === 'true' &&
-//     props.mainheaderpage === MainPageTitles.home
-//       ? `blue`
-//       : `white`};
-//   color: ${props =>
-//     props.selectedmainheaderpage === 'true' &&
-//     props.mainheaderpage === MainPageTitles.career
-//       ? `red`
-//       : `white`};
-//   color: ${props =>
-//     props.selectedmainheaderpage === 'true' &&
-//     props.mainheaderpage === MainPageTitles.hobbies
-//       ? `green`
-//       : `white`};
-//   color: ${props =>
-//     props.selectedmainheaderpage === 'true' &&
-//     props.mainheaderpage === MainPageTitles.about
-//       ? `orange`
-//       : `white`};
-//   color: ${props =>
-//     props.selectedmainheaderpage === 'true' &&
-//     props.mainheaderpage === MainPageTitles.contact
-//       ? `brown`
-//       : `white`};
-//   text-decoration: ${props =>
-//     props.selectedmainheaderpage === 'true' ? `underline` : `none`};
-//   text-shadow: ${props =>
-//     props.selectedmainheaderpage === 'true'
-//       ? `none`
-//       : `2px 3px rgba(0, 0, 0, 0.4);`};
-
-//   &:hover {
-//     transition: all 0.2s ease-in;
-//     color: ${props => props.mainheaderpage === MainPageTitles.home && `blue`};
-//     color: ${props => props.mainheaderpage === MainPageTitles.career && `red`};
-//     color: ${props =>
-//       props.mainheaderpage === MainPageTitles.hobbies && `green`};
-//     color: ${props =>
-//       props.mainheaderpage === MainPageTitles.about && `orange`};
-//     color: ${props =>
-//       props.mainheaderpage === MainPageTitles.contact && `brown`};
-//     background-color: ${Colors.Rhino};
-//   }
-// `;
-
 const DivLineDivider = styled.div`
   margin: 0;
   border: 2px solid ${Colors.Rhino};
@@ -235,4 +191,13 @@ const MainHeaderNav = props => {
   );
 };
 
-export default MainHeaderNav;
+const mapStateToProps = state => {
+  return {
+    ...state
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { resetState }
+)(MainHeaderNav);

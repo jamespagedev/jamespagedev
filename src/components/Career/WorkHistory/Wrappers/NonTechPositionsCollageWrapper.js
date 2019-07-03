@@ -30,8 +30,8 @@ const TechPositionsCollageWraper = props => {
     <DivWrapper>
         <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'pechangaResortAndCasino')} src={require('../../../../assets/img/PechangaLogo.svg')} draggable="false" alt='' />
         <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'unitedStudiosOfSelfDefense')} src={require('../../../../assets/img/USSDLogo.svg')} draggable="false" alt='' />
-        <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'jackWeaverSchool')} src={require('../../../../assets/img/Target.svg')} draggable="false" alt='' />
-        <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'target')} src={require('../../../../assets/img/OakGroveLogo.svg')} draggable="false" alt='' />
+        <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'jackWeaverSchool')} src={require('../../../../assets/img/OakGroveLogo.svg')} draggable="false" alt='' />
+        <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'target')} src={require('../../../../assets/img/Target.svg')} draggable="false" alt='' />
         <ThumbnailImg onClick={ev => props.selectWorkHistoryNavItem(ev, 'calveryChapelBibleCollege')} src={require('../../../../assets/img/CalveryLogo.svg')} draggable="false" alt='' />
     </DivWrapper>
   );
