@@ -24,7 +24,7 @@ const DivSideNavWrapper = styled.div`
   min-width: 300px;
   height: 100%;
   border-right: 6px solid ${Colors.Tundora};
-  background-color: ${Colors.CodGray};
+  background-color: ${Colors.Woodsmoke2};
 `;
 
 /***************************************************************************************************

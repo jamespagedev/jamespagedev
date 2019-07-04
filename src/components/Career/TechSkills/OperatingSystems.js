@@ -15,34 +15,20 @@ const H3Title = styled.div`
   user-select: none;
   font-weight: bold;
   margin-bottom: 5px;
+  user-select: none;
 `;
 
-const DivWindows = styled.div`
+const DivSubSkills = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: #646464;
+  background-color: ${props => props.nestedColor === 'true' && `#646464`};
   width: 100%;
-  margin-bottom: 15px;
-`;
-
-const DivLinux = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #646464;
-  width: 100%;
-  margin-bottom: 15px;
-`;
-
-const DivMac = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #646464;
-  width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: ${props => props.nestedColor === 'true' && `15px`};
 `;
 
 const PSkill = styled.p`
-  margin: 25px;
+  margin: 10px;
+  user-select: none;
 `;
 
 /********************************************* Component ******************************************/
@@ -53,7 +39,7 @@ const OperatingSystems = props => {
       {props.used ? (
         // skills used
         <div>
-          <DivWindows>
+          <DivSubSkills nestedColor='true'>
             <PSkill>Windows&nbsp;95</PSkill>
             <PSkill>Windows&nbsp;98</PSkill>
             <PSkill>Windows&nbsp;ME</PSkill>
@@ -61,19 +47,27 @@ const OperatingSystems = props => {
             <PSkill>Windows&nbsp;Vista</PSkill>
             <PSkill>Windows&nbsp;7</PSkill>
             <PSkill>Windows&nbsp;10</PSkill>
-          </DivWindows>
-          <DivLinux>
+            <PSkill>Windows&nbsp;Server&nbsp;2000</PSkill>
+            <PSkill>Windows&nbsp;Server&nbsp;2003</PSkill>
+            <PSkill>Windows&nbsp;Server&nbsp;2008</PSkill>
+            <PSkill>Windows&nbsp;Embedded&nbsp;Devices&nbsp;(Tablets&nbsp;Phones)</PSkill>
+          </DivSubSkills>
+          <DivSubSkills nestedColor='true'>
             <PSkill>Linux&nbsp;(Redhat)</PSkill>
             <PSkill>Linux&nbsp;(Ubuntu)</PSkill>
             <PSkill>Linux&nbsp;(Kubuntu)</PSkill>
             <PSkill>Linux&nbsp;(CentOS)</PSkill>
-          </DivLinux>
+          </DivSubSkills>
+          <DivSubSkills nestedColor='true'>
+            <PSkill>VMware</PSkill>
+            <PSkill>Vagrant</PSkill>
+          </DivSubSkills>
         </div>
       ) : (
         // skills to learn
-        <DivMac>
+        <DivSubSkills>
           <PSkill>MacOS</PSkill>
-        </DivMac>
+        </DivSubSkills>
       )}
     </DivWrapper>
   );

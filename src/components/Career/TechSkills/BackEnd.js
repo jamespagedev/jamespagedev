@@ -31,33 +31,45 @@ const PSkill = styled.p`
 `;
 
 /********************************************* Component ******************************************/
-const Languages = props => {
+const BackEnd = props => {
   return (
     <DivWrapper>
-      <H3Title draggable="false">Languages:</H3Title>
+      <H3Title draggable="false">Back&nbsp;End:</H3Title>
       {props.used ? (
         // skills used
         <DivSubSkills>
-          <PSkill>Batch&nbsp;Scripts</PSkill>
-          <PSkill>C</PSkill>
-          <PSkill>C++</PSkill>
-          <PSkill>Java</PSkill>
-          <PSkill>Javascript</PSkill>
-          <PSkill>Markdown</PSkill>
-          <PSkill>Selenium&nbsp;(Firefox)</PSkill>
-          <PSkill>Powershell</PSkill>
-          <PSkill>Python</PSkill>
+          <PSkill>NodeJS</PSkill>
+          <PSkill>Express</PSkill>
+          <PSkill>BcryptJS</PSkill>
+          <PSkill>Knex</PSkill>
+          <PSkill>Dotenv</PSkill>
+          <PSkill>Postgress</PSkill>
+          <PSkill>Sqlite3</PSkill>
+          <PSkill>Stripe</PSkill>
+          <PSkill>Jsonwebtoken</PSkill>
+          <PSkill>CORS</PSkill>
+          <PSkill>Morgan</PSkill>
+          <PSkill>Faker</PSkill>
+          <PSkill>Jimp</PSkill>
+          <PSkill>Helmet</PSkill>
+          <PSkill>Sessions</PSkill>
+          <PSkill>Cookies</PSkill>
+          <PSkill>UUID</PSkill>
+          <PSkill>Supertest</PSkill>
+          <PSkill>Heroku</PSkill>
+          <PSkill>Relational&nbsp;Databases</PSkill>
+          <PSkill>RESTful&nbsp;Architecture</PSkill>
+          <PSkill>SQL</PSkill>
         </DivSubSkills>
       ) : (
         // skills to learn
         <DivSubSkills>
-          <PSkill>C#</PSkill>
-          <PSkill>Clojure</PSkill>
-          <PSkill>Rust</PSkill>
+          <PSkill>AWS</PSkill>
+          <PSkill>Django</PSkill>
         </DivSubSkills>
       )}
     </DivWrapper>
   );
 };
 
-export default Languages;
+export default BackEnd;

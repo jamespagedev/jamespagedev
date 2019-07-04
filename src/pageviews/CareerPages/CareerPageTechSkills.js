@@ -17,6 +17,7 @@ const H1Title = styled.h1`
   align-self: center;
   margin: 0 0 25px 0;
   text-decoration: underline;
+  user-select: none;
 `;
 
 /********************************************* Component ******************************************/

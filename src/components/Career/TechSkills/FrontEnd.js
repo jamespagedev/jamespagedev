@@ -31,33 +31,42 @@ const PSkill = styled.p`
 `;
 
 /********************************************* Component ******************************************/
-const Languages = props => {
+const FrontEnd = props => {
   return (
     <DivWrapper>
-      <H3Title draggable="false">Languages:</H3Title>
+      <H3Title draggable="false">Front&nbsp;End:</H3Title>
       {props.used ? (
         // skills used
         <DivSubSkills>
-          <PSkill>Batch&nbsp;Scripts</PSkill>
-          <PSkill>C</PSkill>
-          <PSkill>C++</PSkill>
-          <PSkill>Java</PSkill>
-          <PSkill>Javascript</PSkill>
-          <PSkill>Markdown</PSkill>
-          <PSkill>Selenium&nbsp;(Firefox)</PSkill>
-          <PSkill>Powershell</PSkill>
-          <PSkill>Python</PSkill>
+          <PSkill>HTML</PSkill>
+          <PSkill>CSS</PSkill>
+          <PSkill>LESS</PSkill>
+          <PSkill>DOM&nbsp;(Javascript)</PSkill>
+          <PSkill>React</PSkill>
+          <PSkill>Redux</PSkill>
+          <PSkill>React-Router</PSkill>
+          <PSkill>Jest-Dom</PSkill>
+          <PSkill>Proto-Types</PSkill>
+          <PSkill>Auth0</PSkill>
+          <PSkill>Axios</PSkill>
+          <PSkill>Moment</PSkill>
+          <PSkill>Styled-Components</PSkill>
+          <PSkill>Stripe</PSkill>
+          <PSkill>Netlify</PSkill>
+          <PSkill>Bootstrap</PSkill>
+          <PSkill>Responsive&nbsp;Design</PSkill>
+          <PSkill>Responsive&nbsp;Programming</PSkill>
+          <PSkill>Single&nbsp;Page&nbsp;Applications</PSkill>
         </DivSubSkills>
       ) : (
         // skills to learn
         <DivSubSkills>
-          <PSkill>C#</PSkill>
-          <PSkill>Clojure</PSkill>
-          <PSkill>Rust</PSkill>
+          <PSkill>GraphQL</PSkill>
+          <PSkill>GSAP</PSkill>
         </DivSubSkills>
       )}
     </DivWrapper>
   );
 };
 
-export default Languages;
+export default FrontEnd;
