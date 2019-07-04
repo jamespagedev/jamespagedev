@@ -15,7 +15,7 @@ const DivWrapper = styled.div`
   border-bottom: 3px solid ${Colors.Rhino};
   background: transparent;
   background-color: ${props =>
-    props.headerScrolledOpacity === 'false' ? `rgba(16, 16, 31, 0.2)` : `rgb(16, 16, 31)`};
+    props.headerScrolledOpacity === 'false' ? `rgba(16, 16, 31, 0.5)` : `rgb(16, 16, 31)`};
   width: 100%;
   position: fixed;
   z-index: 9999;

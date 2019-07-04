@@ -115,7 +115,7 @@ const WorkDetailsWrapper = props => {
       )}
       <h3>Reason for Leaving: <SpanReasonForLeaving>{props.workDetails.reasonforleaving}</SpanReasonForLeaving></h3>
       <DivWorkResponsibilities>
-        <h2>WorkResponsibilities</h2>
+        <h2>Work&nbsp;Responsibilities</h2>
         <ul>
         {props.workDetails.workresponsibilities.map((responsibility, i) => <li key={i}>{responsibility}</li>)}
         </ul>

@@ -31,33 +31,27 @@ const PSkill = styled.p`
 `;
 
 /********************************************* Component ******************************************/
-const Languages = props => {
+const IDEs = props => {
   return (
     <DivWrapper>
-      <H3Title draggable="false">Languages:</H3Title>
+      <H3Title draggable="false">IDE's:</H3Title>
       {props.used ? (
         // skills used
         <DivSubSkills>
-          <PSkill>Batch&nbsp;Scripts</PSkill>
-          <PSkill>C</PSkill>
-          <PSkill>C++</PSkill>
-          <PSkill>Java</PSkill>
-          <PSkill>Javascript</PSkill>
-          <PSkill>Markdown</PSkill>
-          <PSkill>Selenium&nbsp;(Firefox)</PSkill>
-          <PSkill>Powershell</PSkill>
-          <PSkill>Python</PSkill>
+          <PSkill>Notepad++</PSkill>
+          <PSkill>VS&nbsp;Code</PSkill>
+          <PSkill>VS&nbsp;Community</PSkill>
+          <PSkill>Intellij</PSkill>
         </DivSubSkills>
       ) : (
         // skills to learn
         <DivSubSkills>
-          <PSkill>C#</PSkill>
-          <PSkill>Clojure</PSkill>
-          <PSkill>Rust</PSkill>
+          <PSkill>Sublime</PSkill>
+          <PSkill>VIM</PSkill>
         </DivSubSkills>
       )}
     </DivWrapper>
   );
 };
 
-export default Languages;
+export default IDEs;
