@@ -46,7 +46,7 @@ const FrontEnd = props => {
           <PSkill>Redux</PSkill>
           <PSkill>React-Router</PSkill>
           <PSkill>Jest-Dom</PSkill>
-          <PSkill>Proto-Types</PSkill>
+          <PSkill>Prop-Types</PSkill>
           <PSkill>Auth0</PSkill>
           <PSkill>Axios</PSkill>
           <PSkill>Moment</PSkill>
