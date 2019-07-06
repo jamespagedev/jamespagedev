@@ -4,6 +4,7 @@ import { Route, withRouter } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 // Components
+import Modals from './components/Modals/Modals.js';
 import MainHeader from './components/header/MainHeader';
 import CareerPage from './pageviews/CareerPages/CareerPage';
 import UnderConstruction from './pageviews/UnderConstruction';
@@ -70,6 +71,7 @@ class App extends Component {
     return (
       <DivWrapper>
         <GlobalStyle />
+        <Modals />
         <MainHeader
           home={`${ClientUrlLinks.home}`}
           careerLink={`${ClientUrlLinks.home}${ClientUrlLinks.career}`}

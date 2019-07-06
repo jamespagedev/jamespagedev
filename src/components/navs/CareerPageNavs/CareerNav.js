@@ -28,7 +28,7 @@ const DivWrapper = styled.div`
   border-bottom: 2px solid ${Colors.Tundora};
   top: 60px;
   position: sticky;
-  z-index: 5;
+  z-index: 2000;
 `;
 
 const DivLineSeperator = styled.div`

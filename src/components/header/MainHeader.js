@@ -18,13 +18,13 @@ const DivWrapper = styled.div`
     props.headerScrolledOpacity === 'false' ? `rgba(16, 16, 31, 0.5)` : `rgb(16, 16, 31)`};
   width: 100%;
   position: fixed;
-  z-index: 9999;
+  z-index: 5000;
 `;
 
 const H1Logo = styled.h1`
   margin: 2px 0 2px 50px;
   user-select: none;
-  color: #2ee0e0;
+  color: ${Colors.Turquoise};
   filter: contrast(1.75);
   font-family: 'Charm', cursive;
   text-shadow: 2px 3px rgba(0, 0, 0, 0.7);

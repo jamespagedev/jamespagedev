@@ -8,10 +8,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 // reducers
-import { CareerReducer } from './reduxstore/reducers/index.js';
+import { ModalsReducer, CareerReducer, ProjectReducer } from './reduxstore/reducers/index.js';
 
-const rootReducer = combineReducers({
-  career: CareerReducer
+const rootReducer = combineReducers({  
+  modals: ModalsReducer,
+  career: CareerReducer,
+  project: ProjectReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
