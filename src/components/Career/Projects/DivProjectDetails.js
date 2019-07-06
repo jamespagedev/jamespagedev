@@ -17,11 +17,11 @@ const DivSummary = styled.div`
   position: absolute;
   z-index: ${props => props.zIndex};
   flex-direction: column;
-  justify-content: space-between;
   overflow: ${props => props.summaryDisplayFull === 'true' ? 'visible' : 'hidden'};
   width: 100%;
+  height: ${props => props.hasExpand === 'true' ? 'auto' : '120px'};
   margin: 0;
-  cursor: ${props => props.hasElipses === 'true' ? 'pointer' : 'auto'};
+  cursor: ${props => props.hasExpand === 'true' ? 'pointer' : 'auto'};
   border-bottom: 2px solid black;
   background-color: gray;
 
@@ -72,7 +72,7 @@ const DivTechStack = styled.div`
   display: flex;
   position: absolute;
   z-index: ${props => props.zIndex};
-  justify-content: space-between;
+  justify-content: ${props => props.hasExpand === 'true' ? 'space-between' : 'flex-start'};
   top: 120px;
   overflow: ${props => props.techStackDisplayFull === 'true' ? 'visible' : 'hidden'};
   flex-direction: column;
@@ -169,7 +169,7 @@ const DivProjectDetails = props => {
   const divTechStackZIndex = 1000 - props.projectNumber - 1;
   return (
     <DivWrapper>
-      <DivSummary onClick={() => props.summaryToggleFullDisplay(props.projectNumber, props.project.summary.length)} zIndex={props.zIndex} summaryDisplayFull={props.project.summaryDisplayFull.toString()} hasElipses={(props.project.summary.length > 1).toString()}>
+      <DivSummary onClick={() => props.summaryToggleFullDisplay(props.projectNumber, props.project.summary.length)} zIndex={props.zIndex} summaryDisplayFull={props.project.summaryDisplayFull.toString()} hasExpand={(props.project.summary.length > 1).toString()}>
         <H4Summary>Summary</H4Summary>
         {props.project.summary.length === 1 ? (<PSummary>{props.project.summary[0]}</PSummary>) : (
           <PSummary>{props.project.summary[0]}{props.project.summaryDisplayFull && props.project.summary[1]}</PSummary>
