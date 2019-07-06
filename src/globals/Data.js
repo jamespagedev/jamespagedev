@@ -5,7 +5,7 @@ const projectsData = [
     projectPreviewImg: "SymposiumHomeDesktop",
     pNamefontSize: "22px",
     pNameFontFamily: "Sans Serif",
-    summary: ["Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar ", "Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity"], // first element is the preview, if it's too big to fit in preview, add more elements so an elipsis will show and combine them.
+    summary: ["Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity ", "Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity"], // first element is the preview, if it's too big to fit in preview, add more elements so an elipsis will show and combine them.
     summaryDisplayFull: false,
     techStack: ["React", "Styled-Components", "Stripe", "Redux", "Auth0", "Prop-Types", "Axios", "NodeJS", "Express", "BcryptJS", "JsonWebToken", "Knex", "pg", "Cors", "Dotenv", "Helmet", "Morgan", "Jimp", "Faker", "Concurrently", "Moment", "Jest", "Nodemon"],
     techStackDisplayFull: false,
@@ -19,7 +19,7 @@ const projectsData = [
     projectPreviewImg: "SnJArcHomeDesktop",
     pNamefontSize: "22px",
     pNameFontFamily: "Sans Serif",
-    summary: ["Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar ", "Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity"], // first element is the preview, if it's too big to fit in preview, add more elements so an elipsis will show and combine them.
+    summary: ["Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity ", "Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity Ipsum Foo Bar Blankity"], // first element is the preview, if it's too big to fit in preview, add more elements so an elipsis will show and combine them.
     summaryDisplayFull: false,
     techStack: ["HTML", "CSS", "LESS", "Javascript", "Responsive Design"],
     techStackDisplayFull: false,
