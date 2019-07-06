@@ -7,10 +7,11 @@ import TechSkillsToLearn from '../../components/Career/TechSkills/TechSkillsToLe
 
 /********************************************** Styles ********************************************/
 const DivWrapper = styled.div`
-display: flex;
-flex-direction: column;
-min-height: 100%;
-width: 100%;`;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+`;
 
 const H1Title = styled.h1`
   display: flex;

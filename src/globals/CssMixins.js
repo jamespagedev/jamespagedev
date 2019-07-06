@@ -6,6 +6,7 @@ export const Colors = {
   darkerCodGray: 'rgb(10, 10, 10)',
   Gallary: '#F0F0F0',
   Rhino: '#30405f',
+  Turquoise: '#2EE0E0',
   Tundora: '#414141',
   Vulcan: '#10101f',
   Woodsmoke: `#18181c`,

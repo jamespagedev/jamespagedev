@@ -1,3 +1,5 @@
+import { ModalsReducer } from './ModalsReducer.js';
 import { CareerReducer } from './CareerReducer.js';
+import { ProjectReducer } from './ProjectReducer.js';
 
-export { CareerReducer };
+export { ModalsReducer, CareerReducer, ProjectReducer };
