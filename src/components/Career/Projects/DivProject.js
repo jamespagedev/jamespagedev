@@ -10,6 +10,7 @@ const DivWrapper = styled.div`
   width: 100%;
   height: 300px;
   border-bottom: 2px solid black;
+  margin-bottom: 40px;
 `;
 
 const DivProjectWrapper = styled.div`
