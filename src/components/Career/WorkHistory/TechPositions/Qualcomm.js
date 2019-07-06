@@ -7,7 +7,7 @@ import WorkDetailsWrapper from '../Wrappers/WorkDetailsWrapper.js';
 /********************************************* Variables ******************************************/
 const workDetails = {
   positions: ["Test Technician", "System Engineer 1", "Test Technician Intermediate"],
-  payrates: ["$17/hr", "$27/hr", "$23/hr"],
+  payrates: ["$17/hr", "$24/hr", "$23/hr"],
   duriation: "March 2011 - May 2015",
   locations: ["San Diego, CA"],
   managers: ["Kris H.", "Basawaraj M.", "Richard O.", "Anuradha K.", "Hari K.", "Debdeep B."],
