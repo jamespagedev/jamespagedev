@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 // Actions
-import { selectResumeWordPosition } from '../../reduxstore/actions/index.js';
+import { selectResumeWordPosition, selectResumePdfPosition } from '../../reduxstore/actions/index.js';
 
 // Globals
 import { Colors } from '../../globals/CssMixins.js';
@@ -150,7 +150,7 @@ const CareerPageMain = props => {
       <DivMain>
         <DivResume>
           <H3DownloadResume>View&nbsp;Resume</H3DownloadResume>
-          <SelectPosition onChange={ev => props.selectResumeWordPosition(ev, ev.target.value)}>
+          <SelectPosition onChange={ev => {props.selectResumeWordPosition(ev, ev.target.value); props.selectResumePdfPosition(ev, ev.target.value)}}> {/* refactor into 1 function */}
             {resumePositions.map((position, i) => (
               <OptionPosition key={i} value={position}>
                 {position}
@@ -161,7 +161,7 @@ const CareerPageMain = props => {
             <AWordDownload href={props.selectedWordResume} target='_blank'>
               <ImgWord src={require('../../assets/img/WordButton.png')} alt='' />
             </AWordDownload>
-            <APdfDownload href='https://www.linkedin.com/in/james-page-94a1923b' target='_blank'>
+            <APdfDownload href={props.selectedPdfResume} target='_blank'>
               <ImgPdf src={require('../../assets/img/PdfButton.png')} alt='' />
             </APdfDownload>
           </DivResumeButtons>
@@ -181,11 +181,12 @@ const CareerPageMain = props => {
 
 const mapStateToProps = state => {
   return {
-    selectedWordResume: state.career.selectedWordResume
+    selectedWordResume: state.career.selectedWordResume,
+    selectedPdfResume: state.career.selectedPdfResume
   };
 };
 
 export default connect(
   mapStateToProps,
-  { selectResumeWordPosition }
+  { selectResumeWordPosition, selectResumePdfPosition }
 )(CareerPageMain);
