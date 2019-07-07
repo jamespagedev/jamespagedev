@@ -6,6 +6,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 // Components
 import Modals from './components/Modals/Modals.js';
 import MainHeader from './components/header/MainHeader';
+import HomePage from './pageviews/HomePage.js';
 import CareerPage from './pageviews/CareerPages/CareerPage';
 import UnderConstruction from './pageviews/UnderConstruction';
 
@@ -84,7 +85,7 @@ class App extends Component {
           pathname={this.props.location.pathname}
           headerScrolledOpacity={this.state.headerScrolledOpacity}
         />
-        <Route exact path={`${ClientUrlLinks.home}`} component={UnderConstruction} />
+        <Route exact path={`${ClientUrlLinks.home}`} render={() => <HomePage {...this.props} contactLink={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} />} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`} render={() => <CareerPage {...this.props} />} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`} component={UnderConstruction} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.about}`} component={UnderConstruction} />
