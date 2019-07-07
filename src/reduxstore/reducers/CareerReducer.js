@@ -12,6 +12,8 @@ import {
   // Resume
   SELECT_RESUME_WORD_SUCCESS,
   SELECT_RESUME_WORD_FAILURE,
+  SELECT_RESUME_PDF_SUCCESS,
+  SELECT_RESUME_PDF_FAILURE,
 
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
@@ -19,7 +21,7 @@ import {
 } from '../actions/index.js';
 
 /********************************** Variables **********************************/
-const { MainPageTitles, origCareerSelNavItems, origWorkHistoryNavItems, defaultPosition, resumeWordLinks } = require('../../globals/Variables');
+const { MainPageTitles, origCareerSelNavItems, origWorkHistoryNavItems, defaultPosition, resumeWordLinks, resumePdfLinks } = require('../../globals/Variables');
 
 /************************************ State ************************************/
 const initialState = {
@@ -33,6 +35,7 @@ const initialState = {
   mainPageTitles: MainPageTitles,
   selectedCareerNavItems: origCareerSelNavItems,
   selectedWordResume: resumeWordLinks[defaultPosition],
+  selectedPdfResume: resumePdfLinks[defaultPosition],
   selectedWorkHistoryNavItems: origWorkHistoryNavItems,
   error: null
 };
@@ -65,6 +68,17 @@ export const CareerReducer = (state = initialState, action) => {
         selectedWordResume: resumeWordLinks[defaultPosition],
         error: action.payload
       };
+      case SELECT_RESUME_PDF_SUCCESS:
+        return {
+          ...state,
+          selectedPdfResume: action.payload
+        };
+      case SELECT_RESUME_PDF_FAILURE:
+        return {
+          ...state,
+          selectedPdfResume: resumePdfLinks[defaultPosition],
+          error: action.payload
+        };
     case SELECT_WORK_HISTORY_SUCCESS:
       return {
         ...state,

@@ -22,6 +22,8 @@ import {
   // Resume
   SELECT_RESUME_WORD_SUCCESS,
   SELECT_RESUME_WORD_FAILURE,
+  SELECT_RESUME_PDF_SUCCESS,
+  SELECT_RESUME_PDF_FAILURE,
 
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
@@ -31,6 +33,7 @@ import {
   resetState,
   selectCareerNavItem,
   selectResumeWordPosition,
+  selectResumePdfPosition,
   selectWorkHistoryNavItem
 } from './CareerActions.js';
 
@@ -69,6 +72,8 @@ export {
   // Resume
   SELECT_RESUME_WORD_SUCCESS,
   SELECT_RESUME_WORD_FAILURE,
+  SELECT_RESUME_PDF_SUCCESS,
+  SELECT_RESUME_PDF_FAILURE,
 
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
@@ -85,6 +90,7 @@ export {
   resetState,
   selectCareerNavItem,
   selectResumeWordPosition,
+  selectResumePdfPosition,
   selectWorkHistoryNavItem,
   techStackToggleFullDisplay,
   summaryToggleFullDisplay

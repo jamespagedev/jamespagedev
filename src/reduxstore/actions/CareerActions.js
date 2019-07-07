@@ -1,5 +1,5 @@
 // Globals
-const { resumeWordLinks, origCareerSelNavItems, origWorkHistoryNavItems } = require('../../globals/Variables.js');
+const { resumeWordLinks, resumePdfLinks, origCareerSelNavItems, origWorkHistoryNavItems } = require('../../globals/Variables.js');
 
 /***************************************************************************************************
  ********************************************* Actions *******************************************
@@ -16,6 +16,8 @@ export const SELECT_CAREER_NAV_ITEM_FAILURE = 'SELECT_CAREER_NAV_ITEM_FAILURE';
 // Resume
 export const SELECT_RESUME_WORD_SUCCESS = 'SELECT_RESUME_WORD_SUCCESS';
 export const SELECT_RESUME_WORD_FAILURE = 'SELECT_RESUME_WORD_FAILURE';
+export const SELECT_RESUME_PDF_SUCCESS = 'SELECT_RESUME_PDF_SUCCESS';
+export const SELECT_RESUME_PDF_FAILURE = 'SELECT_RESUME_PDF_FAILURE';
 
 // Work History Sub
 export const SELECT_WORK_HISTORY_SUCCESS = 'SELECT_WORK_HISTORY_SUCCESS';
@@ -51,6 +53,16 @@ export const selectResumeWordPosition = (ev, position) => dispatch => {
       dispatch({ type: SELECT_RESUME_WORD_SUCCESS, payload: wordLinks[position] });
     })
     .catch(err => dispatch({ type: SELECT_RESUME_WORD_FAILURE, payload: err }));
+};
+
+export const selectResumePdfPosition = (ev, position) => dispatch => {
+  ev.preventDefault();
+
+  Promise.resolve(resumePdfLinks)
+    .then(pdfLinks => {
+      dispatch({ type: SELECT_RESUME_PDF_SUCCESS, payload: pdfLinks[position] });
+    })
+    .catch(err => dispatch({ type: SELECT_RESUME_PDF_FAILURE, payload: err }));
 };
 
 export const selectWorkHistoryNavItem = (ev, item) => dispatch => {

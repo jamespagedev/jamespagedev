@@ -31,7 +31,7 @@ const DivProjectImage = styled.div`
     font-family: ${props => props.pNameFontFamily};
     text-align: center;
     position: absolute;
-    z-index: 9999;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
