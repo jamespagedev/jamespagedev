@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import img from '../assets/img/cloudsMain.png';
+import homeBackgroundImg from '../assets/img/cloudsMain.png';
+import myFaceImgImg from '../assets/img/myFace.png';
 
 /********************************************** Styles ********************************************/
 const DivWrapper = styled.div`
@@ -16,7 +17,7 @@ const DivImgBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(${img});
+  background-image: url(${homeBackgroundImg});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -35,7 +36,7 @@ const DivImgBackground = styled.div`
 `;
 
 const ImgFace = styled.img`
-  width: 150px;
+  width: 120px;
   height: 150px;
   margin-top: 230px;
   border-radius: 15px;
@@ -52,7 +53,7 @@ const HomePage = props => {
   return (
     <DivWrapper>
       <DivImgBackground>
-        <ImgFace src='https://avatars0.githubusercontent.com/u/43793595?s=460&v=4' draggable="false" alt='' />
+        <ImgFace src={`${myFaceImgImg}`} draggable="false" alt='' />
         <h2>Greetings, thank you for taking the time to visit my website. I'm a software developer who enjoys working on front-end, back-end, full stack, automation, and systems. My experience ranges in many different tech stacks over the years of being in industry. I enjoy learning new technologies and coming up with better coding architectures. Feel free to browse around if you want to find out more about me. If you like what you see... feel free to <Link to={`${props.contactLink}`} draggable="false" style={{color: '#68e1ef'}}>contact</Link> me.</h2>
       </DivImgBackground>
     </DivWrapper>
