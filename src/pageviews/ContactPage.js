@@ -37,10 +37,11 @@ const DivContainer = styled.div`
   padding: 25px;
 
   h1 {
-    font-size: 48px;
+    font-size: 72px;
     font-family: "sans serif";
     text-align: center;
     user-select: none;
+    margin: 10px;
   }
 `;
 
@@ -58,10 +59,11 @@ const DivLeft = styled.div`
   align-items: center;
   justify-content: flex-start;
   height: 50%;
-  width: 300px;
+  width: 450px;
 
   p {
     user-select: none;
+    font-size: 22px;
   }
 `;
 
@@ -71,12 +73,13 @@ const DivRight = styled.div`
   justify-content: flex-start;
   align-items: center;
   height: 65%;
-  width: 300px;
+  width: 450px;
 
   p {
     width: 100%;
     user-select: none;
     text-align: center;
+    font-size: 22px;
     margin: 0;
     padding: 25px;
   }
