@@ -5,6 +5,7 @@ import styled from 'styled-components';
  ********************************************** Styles *********************************************
  **************************************************************************************************/
 const InputSearchBar = styled.input`
+  visibility: hidden;
   width: 294px;
   min-width: 294px;
   height: 100%;
