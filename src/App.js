@@ -8,6 +8,7 @@ import Modals from './components/Modals/Modals.js';
 import MainHeader from './components/header/MainHeader';
 import HomePage from './pageviews/HomePage.js';
 import CareerPage from './pageviews/CareerPages/CareerPage';
+import ContactPage from './pageviews/ContactPage.js';
 import UnderConstruction from './pageviews/UnderConstruction';
 
 // Globals
@@ -89,7 +90,7 @@ class App extends Component {
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`} render={() => <CareerPage {...this.props} />} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`} component={UnderConstruction} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.about}`} component={UnderConstruction} />
-        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} component={UnderConstruction} />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} component={ContactPage} />
       </DivWrapper>
     );
   }
