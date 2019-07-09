@@ -165,8 +165,6 @@ const AWebsite = styled.a`
 
 /********************************************* Component ******************************************/
 const DivProjectDetails = props => {
-  const divSummaryZIndex = 1000 - props.projectNumber;
-  const divTechStackZIndex = 1000 - props.projectNumber - 1;
   return (
     <DivWrapper>
       <DivSummary onClick={() => props.summaryToggleFullDisplay(props.projectNumber, props.project.summary.length)} zIndex={props.zIndex} summaryDisplayFull={props.project.summaryDisplayFull.toString()} hasExpand={(props.project.summary.length > 1).toString()}>

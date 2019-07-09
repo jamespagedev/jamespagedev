@@ -28,7 +28,6 @@ const DivVoid = styled.div`
 
 /********************************************* Component ******************************************/
 const Modals = props => {
-  console.log('props =', props)
   if (props.modalsIsActive){
     return (
       <DivWrapper onClick={() => props.setCareerProjectImgModal(false, '')}>
