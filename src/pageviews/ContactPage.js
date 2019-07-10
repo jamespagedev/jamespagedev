@@ -77,12 +77,19 @@ const DivRight = styled.div`
 
   p {
     width: 100%;
-    user-select: none;
     text-align: center;
     font-size: 22px;
     margin: 0;
     padding: 25px;
+
+    &:not(:nth-child(2)) {
+      user-select: none;
+    }
   }
+`;
+
+const SpanUserSelectNone = styled.span`
+  user-select: none;
 `;
 
 const DivLineBreak = styled.div`
@@ -104,7 +111,7 @@ const ContactPage = props => {
             </DivLeft>
             <DivRight>
               <DivLineBreak/>
-              <p draggable="false">Email:&nbsp;jamespagedev@outlook.com</p>
+              <p draggable="false"><SpanUserSelectNone>Email:&nbsp;</SpanUserSelectNone>jamespagedev@outlook.com</p>
               <DivLineBreak/>
               <p><a href="https://www.linkedin.com/in/james-page-94a1923b" target='_blank' draggable="false" rel='noopener noreferrer'>Linkedin</a></p>
               <DivLineBreak/>

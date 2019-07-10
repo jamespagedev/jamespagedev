@@ -22,7 +22,7 @@ const DivWrapper = styled.div`
   background: transparent;
   width: 600px;
   height: 54px;
-  justify-content: space-between;
+  justify-content: center;
 `;
 
 const Nav = styled.nav`
@@ -122,12 +122,13 @@ const LinkContact = styled(Link)`
 `;
 
 const DivLineDivider = styled.div`
+  display: none;
   margin: 0;
   border: 2px solid ${Colors.Rhino};
 `;
 
 const LinkSignIn = styled(Link)`
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   font-size: 20px;
