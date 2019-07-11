@@ -116,9 +116,9 @@ const AboutPage = props => {
           <DivSides>
             <DivLeft>
               <h2 draggable="false">Myself</h2>
-              <p draggable="false">My name is James, and I enjoy writting code for a living. I've always loved working with computers and technology ever since I was 18 (almost 2 decades ago). Currently, I am willing to relocate for my next position I take on.</p>
-              <p>For the next position I take on, I want it to be one I will stay at for at least 10 years. I've felt I have worked enough tech positions to get a well-rounded experience in the industry. Now I'm looking to settle in with a company, continue my success, and provide value.</p>
-              <p>I really enjoy learning tech stacks, and figuring ways to piece them together building an architecture. I also am always looking for better ways to improve my coding patterns/habbits. Normally, during the weekends I'll spend my time learning a new techstack, or improving upon ones I have already worked with.</p>
+              <p draggable="false">My name is James, and I enjoy writing code for a living. I've always loved working with computers and technology ever since I was 18 (almost 2 decades ago). Currently, I am willing to relocate for my next position I take on.</p>
+              <p>I've felt I have worked enough tech positions to get a well-rounded experience in the industry. Now I'm looking to settle in with a company, continue my success, and provide value.</p>
+              <p>I really enjoy learning tech stacks, and figuring ways to piece them together building an architecture. I also am always looking for better ways to improve my coding patterns/habits. Normally, during the weekends I'll spend my time learning a new tech stack, or improving upon ones I have already worked with.</p>
               <p>I'm currently available in the market to accept a new job. So if you like what you see here, feel free to contact me and I'll reply first chance I get.</p>
             </DivLeft>
             <DivRight>
