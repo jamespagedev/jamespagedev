@@ -8,9 +8,10 @@ import Modals from './components/Modals/Modals.js';
 import MainHeader from './components/header/MainHeader';
 import HomePage from './pageviews/HomePage.js';
 import CareerPage from './pageviews/CareerPages/CareerPage';
+import HobbiesPage from './pageviews/HobbiesPage.js';
 import AboutPage from './pageviews/AboutPage.js';
 import ContactPage from './pageviews/ContactPage.js';
-import UnderConstruction from './pageviews/UnderConstruction';
+// import UnderConstruction from './pageviews/UnderConstruction';
 
 // Globals
 import { Colors } from './globals/CssMixins';
@@ -89,7 +90,7 @@ class App extends Component {
         />
         <Route exact path={`${ClientUrlLinks.home}`} render={() => <HomePage {...this.props} contactLink={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} />} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`} render={() => <CareerPage {...this.props} />} />
-        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`} component={UnderConstruction} />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`} component={HobbiesPage} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.about}`} component={AboutPage} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} component={ContactPage} />
       </DivWrapper>
