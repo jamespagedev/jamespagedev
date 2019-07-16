@@ -18,10 +18,14 @@ import {
   // Work History
   SELECT_WORK_HISTORY_SUCCESS,
   SELECT_WORK_HISTORY_FAILURE,
+
+  // Education
+  SELECT_EDUCATION_SUCCESS,
+  SELECT_EDUCATION_FAILURE
 } from '../actions/index.js';
 
 /********************************** Variables **********************************/
-const { MainPageTitles, origCareerSelNavItems, origWorkHistoryNavItems, defaultPosition, resumeWordLinks, resumePdfLinks } = require('../../globals/Variables');
+const { MainPageTitles, origCareerSelNavItems, origWorkHistoryNavItems, origEducationNavItems, defaultPosition, resumeWordLinks, resumePdfLinks } = require('../../globals/Variables');
 
 /************************************ State ************************************/
 const initialState = {
@@ -37,6 +41,7 @@ const initialState = {
   selectedWordResume: resumeWordLinks[defaultPosition],
   selectedPdfResume: resumePdfLinks[defaultPosition],
   selectedWorkHistoryNavItems: origWorkHistoryNavItems,
+  selectedEducationNavItems: origEducationNavItems,
   error: null
 };
 
@@ -89,6 +94,16 @@ export const CareerReducer = (state = initialState, action) => {
         ...state,
         error: action.payload
       };
+      case SELECT_EDUCATION_SUCCESS:
+        return {
+          ...state,
+          selectedEducationNavItems: action.payload
+        };
+      case SELECT_EDUCATION_FAILURE:
+        return {
+          ...state,
+          error: action.payload
+        };
     default:
       return state;
   }

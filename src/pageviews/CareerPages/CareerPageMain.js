@@ -6,6 +6,7 @@ const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  user-select: none;
 `;
 
 const H1PageTitle = styled.h1`
@@ -44,7 +45,7 @@ const CareerPageMain = props => {
         <H3CareerCategory><SpanCategory>Work&nbsp;History&nbsp;-&nbsp;</SpanCategory>Shows companies I have worked for both tech and non-tech. The details of my work responsibilities and what the work consisted of are shown for each company.</H3CareerCategory>
         <H3CareerCategory><SpanCategory>Education&nbsp;-&nbsp;</SpanCategory>Shows the college I went to, the degree's I got, and my transcripts. It also contains online courses I've taken, self-taught books I have read, and the things I have learned at Lambda School (Coding Bootcamp)</H3CareerCategory>
         <H3CareerCategory><SpanCategory>Tech&nbsp;Skills&nbsp;-&nbsp;</SpanCategory>Shows a wide range of skills I have worked with over the course of my career (there are a lot, and it's growing...). It also shows tech skills I have an interest in learning next.</H3CareerCategory>
-        <H3CareerCategory><SpanCategory>Projects&nbsp;-&nbsp;</SpanCategory>Shows the top 5 projects I have worked on. I felt putting projects down that use a variety of tech stacks here. I will also add in all complete projects later (hundreds++ of them).</H3CareerCategory>
+        <H3CareerCategory><SpanCategory>Projects&nbsp;-&nbsp;</SpanCategory>Shows the top five projects I have worked on. I felt putting projects down that use a variety of tech stacks here. I will also add in all complete projects later (over 100 of them).</H3CareerCategory>
       </DivCareerSummary>
     </DivWrapper>
   );

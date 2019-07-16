@@ -29,12 +29,17 @@ import {
   SELECT_WORK_HISTORY_SUCCESS,
   SELECT_WORK_HISTORY_FAILURE,
 
+  // Education
+  SELECT_EDUCATION_SUCCESS,
+  SELECT_EDUCATION_FAILURE,
+
   // Functions
   resetState,
   selectCareerNavItem,
   selectResumeWordPosition,
   selectResumePdfPosition,
-  selectWorkHistoryNavItem
+  selectWorkHistoryNavItem,
+  selectEducationNavItem
 } from './CareerActions.js';
 
 import {
@@ -79,6 +84,10 @@ export {
   SELECT_WORK_HISTORY_SUCCESS,
   SELECT_WORK_HISTORY_FAILURE,
 
+  // Education
+  SELECT_EDUCATION_SUCCESS,
+  SELECT_EDUCATION_FAILURE,
+
   // Summary
   SUMMARY_TOGGLE_FULL_DISPLAY,
 
@@ -92,6 +101,7 @@ export {
   selectResumeWordPosition,
   selectResumePdfPosition,
   selectWorkHistoryNavItem,
+  selectEducationNavItem,
   techStackToggleFullDisplay,
   summaryToggleFullDisplay
 };

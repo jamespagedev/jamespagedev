@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import CareerPageMain from './CareerPageMain.js';
 import CareerPageResume from './CareerPageResume.js';
 import CareerPageWorkHistory from './CareerPageWorkHistory.js';
+import CareerEducation from './CareerEducation.js';
 import CareerPageTechSkills from './CareerPageTechSkills.js';
 import CareerPageProjects from './CareerPageProjects.js';
 import CareerNav from '../../components/navs/CareerPageNavs/CareerNav';
@@ -81,7 +82,7 @@ class CareerPage extends Component {
             {this.props.selNavItems.main === 'true' && <CareerPageMain />}
             {this.props.selNavItems.resume === 'true' && <CareerPageResume />}
             {this.props.selNavItems.work_history === 'true' && <CareerPageWorkHistory />}
-            {this.props.selNavItems.education === 'true' && <IpsumH1 />}
+            {this.props.selNavItems.education === 'true' && <CareerEducation />}
             {this.props.selNavItems.skills === 'true' && <CareerPageTechSkills />}
             {this.props.selNavItems.projects === 'true' && <CareerPageProjects />}
           </DivTestBody>
