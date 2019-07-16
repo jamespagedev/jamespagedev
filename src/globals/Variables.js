@@ -58,6 +58,15 @@ const origWorkHistoryNavItems = {
   calveryChapelBibleCollege: 'false',
 }
 
+const origEducationNavItems = {
+  main: 'false',
+  lambdaSchool: 'false',
+  books: 'false',
+  coursera: 'false',
+  ittTechBachelors: 'false',
+  ittTechAssociates: 'false'
+}
+
 const defaultPosition = 'Front-End(Web) Developer';
 const resumePositions = [
   defaultPosition,
@@ -91,6 +100,7 @@ module.exports = {
   careerNavItemNames,
   origCareerSelNavItems,
   origWorkHistoryNavItems,
+  origEducationNavItems,
   defaultPosition,
   resumePositions,
   resumeWordLinks,

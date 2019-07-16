@@ -12,7 +12,7 @@ import EducationDropdown from './dropdowns/EducationDropdown.js';
 import { Colors } from '../../../globals/CssMixins.js';
 
 // actions
-import { selectCareerNavItem, selectWorkHistoryNavItem } from '../../../reduxstore/actions/index.js';
+import { selectCareerNavItem, selectWorkHistoryNavItem, selectEducationNavItem } from '../../../reduxstore/actions/index.js';
 
 /***************************************************************************************************
  ********************************************** Styles **********************************************
@@ -217,7 +217,7 @@ class CareerNav extends Component {
               to='#'
               draggable='false'
               ed_navbg={this.state.ed_navbg.toString()}
-              onClick={ev => this.props.selectCareerNavItem(ev, 'education')}
+              onClick={ev => {this.props.selectCareerNavItem(ev, 'education'); this.props.selectEducationNavItem(ev,'main');}}
             >
               Education
               <i style={{ fontSize: '16px', marginRight: '-10px', marginLeft: '10px' }} className='fas fa-chevron-down' />
@@ -259,5 +259,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { selectCareerNavItem, selectWorkHistoryNavItem }
+  { selectCareerNavItem, selectWorkHistoryNavItem, selectEducationNavItem }
 )(CareerNav);
