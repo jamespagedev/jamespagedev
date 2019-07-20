@@ -16,7 +16,7 @@ const DivHeaderBackground = styled.div`
   background-color: ${Colors.Vulcan};
   position: fixed;
   z-index: 10;
-  top: 2px
+  top: 2px;
 `;
 
 const DivContainer = styled.div`

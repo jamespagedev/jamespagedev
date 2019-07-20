@@ -79,6 +79,7 @@ class App extends Component {
         <MainHeader
           home={`${ClientUrlLinks.home}`}
           careerLink={`${ClientUrlLinks.home}${ClientUrlLinks.career}`}
+          portfolioLink={`${ClientUrlLinks.home}${ClientUrlLinks.portfolio}`}
           hobbiesLink={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`}
           aboutLink={`${ClientUrlLinks.home}${ClientUrlLinks.about}`}
           contactLink={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`}
