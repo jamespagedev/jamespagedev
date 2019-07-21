@@ -6,6 +6,7 @@ import { Colors } from '../globals/CssMixins.js';
 import myFaceImgImg from '../assets/img/myFace.png';
 
 /********************************************** Styles ********************************************/
+// Note: phone view 650 width.
 const DivWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,6 +29,10 @@ const DivTop = styled.div`
   flex: 1;
   background-color: #013A6B;
   background: linear-gradient(95deg, #004E95 49.75%, #7FFF00 50%, #7FFF00 calc(50% + 3px), #013A6B calc(50% + 4px));
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 
 const DivTopIntro = styled.div`
@@ -40,11 +45,26 @@ const DivTopIntro = styled.div`
   width: 41%;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 650px) {
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    border-bottom: 2px solid #7FFF00;
+    background: #004E95;
+    justify-content: flex-start;
+  }
 `;
 
 const H3Center = styled.h3`
   text-align: center;
   margin: 0;
+
+  @media (max-width: 650px) {
+    position: relative;
+    top: 10%;
+  }
 `;
 
 const ImgFace = styled.img`
@@ -57,18 +77,32 @@ const ImgFace = styled.img`
   -o-user-select: none;
   user-select: none;
   pointer-events: none;
+
+  @media (max-width: 650px) {
+    position: relative;
+    top: 6%;
+  }
 `;
 
 const DivTopSkills = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  top: 15%;
+  top: 10%;
   left: 14%;
-  height: 80%;
+  height: 85%;
   width: 41%;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 650px) {
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    border-top: 2px solid #7FFF00;
+    background: #013A6B;
+  }
 `;
 
 const H1WhiteUnderline = styled.h1`
@@ -78,33 +112,11 @@ const H1WhiteUnderline = styled.h1`
   user-select: none;
 `;
 
-const DivTopSkillsLanguage = styled.div`
+const DivTopSkillsCategory = styled.div`
   display: flex;
   flex-direction: column;
   width: 95%;
-  height: 25%;
-  background: rgba(224, 224, 224, 0.5);
-  border-radius: 15px;
-  padding: 10px;
-  justify-content: space-evenly;
-`;
-
-const DivTopSkillsFrontEnd = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  height: 25%;
-  background: rgba(224, 224, 224, 0.5);
-  border-radius: 15px;
-  padding: 10px;
-  justify-content: space-evenly;
-`;
-
-const DivTopSkillsBackEnd = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  height: 25%;
+  height: 29%;
   background: rgba(224, 224, 224, 0.5);
   border-radius: 15px;
   padding: 10px;
@@ -118,8 +130,8 @@ const DivRow = styled.div`
 `;
 
 const ImgSkill = styled.img`
-  max-height: 60px;
-  max-width: 70px;
+  max-height: 80px;
+  max-width: 80px;
 `;
 
 /********************************************* Component ******************************************/
@@ -134,7 +146,7 @@ const PortfolioPage = props => {
         </DivTopIntro>
         <DivTopSkills>
           <H1WhiteUnderline>Skills</H1WhiteUnderline>
-          <DivTopSkillsLanguage>
+          <DivTopSkillsCategory>
             <DivRow>
               <ImgSkill src={require('../assets/img/javascript.svg')} draggable="false" alt='javascript' />
               <ImgSkill src={require('../assets/img/python.svg')} draggable="false" alt='python' />
@@ -145,8 +157,8 @@ const PortfolioPage = props => {
               <ImgSkill src={require('../assets/img/cpp.svg')} draggable="false" alt='cpp' />
               <ImgSkill src={require('../assets/img/powershell.svg')} draggable="false" alt='powershell' />
             </DivRow>
-          </DivTopSkillsLanguage>
-          <DivTopSkillsFrontEnd>
+          </DivTopSkillsCategory>
+          <DivTopSkillsCategory>
             <DivRow>
               <ImgSkill src={require('../assets/img/html5.svg')} draggable="false" alt='html5' />
               <ImgSkill src={require('../assets/img/css.svg')} draggable="false" alt='css' />
@@ -157,8 +169,8 @@ const PortfolioPage = props => {
               <ImgSkill src={require('../assets/img/redux.svg')} draggable="false" alt='redux' />
               <ImgSkill src={require('../assets/img/axios.svg')} draggable="false" alt='axios' />
             </DivRow>
-          </DivTopSkillsFrontEnd>
-          <DivTopSkillsBackEnd>
+          </DivTopSkillsCategory>
+          <DivTopSkillsCategory>
             <DivRow>
               <ImgSkill src={require('../assets/img/nodejs.svg')} draggable="false" alt='nodejs' />
               <ImgSkill src={require('../assets/img/express.svg')} draggable="false" alt='express' />
@@ -169,7 +181,7 @@ const PortfolioPage = props => {
               <ImgSkill src={require('../assets/img/stripe.svg')} draggable="false" alt='stripe' />
               <ImgSkill src={require('../assets/img/restfulapi.svg')} draggable="false" alt='restfulapi' />
             </DivRow>
-          </DivTopSkillsBackEnd>
+          </DivTopSkillsCategory>
         </DivTopSkills>
       </DivTop>
     </DivWrapper>
