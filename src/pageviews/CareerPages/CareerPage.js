@@ -11,7 +11,6 @@ import CareerPageTechSkills from './CareerPageTechSkills.js';
 import CareerPageProjects from './CareerPageProjects.js';
 import CareerNav from '../../components/navs/CareerPageNavs/CareerNav';
 import CareerSideNav from '../../components/navs/CareerPageNavs/SideNavs/CareerSideNav';
-import IpsumH1 from '../../components/IpsumH1.js';
 
 // Globals
 import { Colors } from '../../globals/CssMixins';
