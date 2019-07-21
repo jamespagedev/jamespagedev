@@ -9,7 +9,7 @@ import { Colors } from '../../globals/CssMixins';
 import { resetState } from '../../reduxstore/actions/index.js'
 
 // Globals
-const { MainPageTitles, ClientUrlLinks } = require('../../globals/Variables.js');
+const { ClientUrlLinks } = require('../../globals/Variables.js');
 
 
 
@@ -20,14 +20,12 @@ const DivWrapper = styled.div`
   display: flex;
   margin: 0;
   background: transparent;
-  width: 600px;
   height: 54px;
   justify-content: center;
 `;
 
 const Nav = styled.nav`
   display: flex;
-  width: 500px;
   height: 100%;
 `;
 
@@ -45,6 +43,24 @@ const LinkHome = styled(Link)`
   &:hover {
     transition: all 0.2s ease-in;
     color: blue;
+    background-color: ${Colors.Rhino};
+  }
+`;
+
+const LinkPortfolio = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 10.9px;
+  color: ${props => (props.selectedmainheaderpage === 'true' ? Colors.GoldTips : `white`)};
+  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
+  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
+
+  &:hover {
+    transition: all 0.2s ease-in;
+    color: ${Colors.GoldTips};
     background-color: ${Colors.Rhino};
   }
 `;
@@ -152,14 +168,18 @@ const MainHeaderNav = props => {
       <Nav>
         <LinkHome
           selectedmainheaderpage={(props.pathname === ClientUrlLinks.home).toString()}
-          mainheaderpage={`${MainPageTitles.home}`}
           to={`${props.home}`}
         >
           Home
         </LinkHome>
+        <LinkPortfolio
+          selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.portfolio).toString()}
+          to={`${props.portfolioLink}`}
+        >
+          Portfolio
+        </LinkPortfolio>
         <LinkCareer
           selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.career).toString()}
-          mainheaderpage={`${MainPageTitles.career}`}
           to={`${props.careerLink}`}
           onClick={props.resetState}
         >
@@ -167,21 +187,18 @@ const MainHeaderNav = props => {
         </LinkCareer>
         <LinkHobbies
           selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.hobbies).toString()}
-          mainheaderpage={`${MainPageTitles.hobbies}`}
           to={`${props.hobbiesLink}`}
         >
           Hobbies
         </LinkHobbies>
         <LinkAbout
           selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.about).toString()}
-          mainheaderpage={`${MainPageTitles.about}`}
           to={`${props.aboutLink}`}
         >
           About
         </LinkAbout>
         <LinkContact
           selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.contact).toString()}
-          mainheaderpage={`${MainPageTitles.contact}`}
           to={`${props.contactLink}`}
         >
           Contact

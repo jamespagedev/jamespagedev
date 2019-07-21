@@ -7,6 +7,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Modals from './components/Modals/Modals.js';
 import MainHeader from './components/header/MainHeader';
 import HomePage from './pageviews/HomePage.js';
+import PortfolioPage from './pageviews/PortfolioPage.js';
 import CareerPage from './pageviews/CareerPages/CareerPage';
 import HobbiesPage from './pageviews/HobbiesPage.js';
 import AboutPage from './pageviews/AboutPage.js';
@@ -79,6 +80,7 @@ class App extends Component {
         <MainHeader
           home={`${ClientUrlLinks.home}`}
           careerLink={`${ClientUrlLinks.home}${ClientUrlLinks.career}`}
+          portfolioLink={`${ClientUrlLinks.home}${ClientUrlLinks.portfolio}`}
           hobbiesLink={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`}
           aboutLink={`${ClientUrlLinks.home}${ClientUrlLinks.about}`}
           contactLink={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`}
@@ -89,6 +91,7 @@ class App extends Component {
           headerScrolledOpacity={this.state.headerScrolledOpacity}
         />
         <Route exact path={`${ClientUrlLinks.home}`} render={() => <HomePage {...this.props} contactLink={`${ClientUrlLinks.home}${ClientUrlLinks.contact}`} />} />
+        <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.portfolio}`} component={PortfolioPage} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.career}`} render={() => <CareerPage {...this.props} />} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.hobbies}`} component={HobbiesPage} />
         <Route exact path={`${ClientUrlLinks.home}${ClientUrlLinks.about}`} component={AboutPage} />
