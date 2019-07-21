@@ -23,8 +23,9 @@ const DivHeaderBackground = styled.div`
 `;
 
 const DivTop = styled.div`
+  display: flex;
   margin-top: 60px;
-  height: 100%;
+  flex: 1;
   background-color: #013A6B;
   background: linear-gradient(95deg, #004E95 49.75%, #7FFF00 50%, #7FFF00 calc(50% + 3px), #013A6B calc(50% + 4px));
 `;
@@ -62,9 +63,9 @@ const DivTopSkills = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  bottom: 35%;
-  left: 55%;
-  height: 75%;
+  top: 15%;
+  left: 14%;
+  height: 80%;
   width: 41%;
   justify-content: space-evenly;
   align-items: center;
@@ -79,32 +80,35 @@ const H1WhiteUnderline = styled.h1`
 
 const DivTopSkillsLanguage = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 95%;
   height: 25%;
   background: rgba(224, 224, 224, 0.5);
   border-radius: 15px;
   padding: 10px;
+  justify-content: space-evenly;
 `;
 
 const DivTopSkillsFrontEnd = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 95%;
   height: 25%;
   background: rgba(224, 224, 224, 0.5);
   border-radius: 15px;
   padding: 10px;
+  justify-content: space-evenly;
 `;
 
 const DivTopSkillsBackEnd = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 95%;
   height: 25%;
   background: rgba(224, 224, 224, 0.5);
   border-radius: 15px;
   padding: 10px;
+  justify-content: space-evenly;
 `;
 
 const DivRow = styled.div`
@@ -126,7 +130,7 @@ const PortfolioPage = props => {
       <DivTop>
         <DivTopIntro>
           <ImgFace src={`${myFaceImgImg}`} draggable="false" alt='' />
-          <H3Center>Greetings, I'm a fullstack developer. During my time off working, I kill scorpions around my office, watch for rattle snakes when I leave the house, and dodge killer bee's while I'm being chased by coyotes getting to my car.</H3Center>
+          <H3Center>Greetings, I'm a fullstack developer. I also kill scorpions around my office, watch for rattle snakes when I leave the house, and dodge killer bee's while I'm being chased by coyotes getting to my car.</H3Center>
         </DivTopIntro>
         <DivTopSkills>
           <H1WhiteUnderline>Skills</H1WhiteUnderline>
