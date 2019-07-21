@@ -49,7 +49,7 @@ const DivTopIntro = styled.div`
   @media (max-width: 650px) {
     top: 0;
     left: 0;
-    min-height: 100%;
+    min-height: calc(100vh - 60px);
     width: 100%;
     border-bottom: 2px solid #7FFF00;
     background: #004E95;
@@ -63,7 +63,7 @@ const H3Center = styled.h3`
 
   @media (max-width: 650px) {
     position: relative;
-    top: 10%;
+    top: 24%;
   }
 `;
 
@@ -80,7 +80,7 @@ const ImgFace = styled.img`
 
   @media (max-width: 650px) {
     position: relative;
-    top: 6%;
+    top: 20%;
   }
 `;
 
@@ -98,7 +98,7 @@ const DivTopSkills = styled.div`
   @media (max-width: 650px) {
     top: 0;
     left: 0;
-    min-height: 100%;
+    min-height: calc(100vh - 60px);
     width: 100%;
     border-top: 2px solid #7FFF00;
     background: #013A6B;
