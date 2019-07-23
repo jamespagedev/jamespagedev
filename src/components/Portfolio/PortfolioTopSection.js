@@ -15,7 +15,7 @@ const DivTop = styled.div`
   background-color: #013A6B;
   background: linear-gradient(95deg, #004E95 49.75%, #7FFF00 50%, #7FFF00 calc(50% + 3px), #013A6B calc(50% + 4px));
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     flex-direction: column;
   }
 `;
@@ -31,7 +31,7 @@ const DivTopIntro = styled.div`
   justify-content: space-evenly;
   align-items: center;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     top: 0;
     left: 0;
     height: calc(100vh - 60px);
@@ -48,7 +48,7 @@ const H3Center = styled.h3`
   color: white;
   padding: 0 15px;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     position: relative;
     top: 24%;
   }
@@ -65,7 +65,7 @@ const ImgFace = styled.img`
   user-select: none;
   pointer-events: none;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     position: relative;
     top: 20%;
   }
@@ -81,7 +81,7 @@ const DivTopSkills = styled.div`
   width: 41%;
   align-items: center;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     top: 0!important;
     left: 0;
     height: calc(100vh - 60px);
@@ -129,7 +129,7 @@ const ImgSkill = styled.img`
 max-height: 80px;
 max-width: 80px;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
   max-height: 65px;
   max-width: 70px;
   }

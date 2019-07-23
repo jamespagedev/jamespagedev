@@ -11,7 +11,7 @@ const DivMid = styled.div`
   background-color: #004E95;
   background: linear-gradient(85deg, #013A6B 49.75%, #7FFF00 50%, #7FFF00 calc(50% + 3px), #004E95 calc(50% + 4px));
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     flex-direction: column;
   }
 `;
@@ -19,10 +19,11 @@ const DivMid = styled.div`
 const DivProjectSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 51%;
   align-items: center;
+  margin-right: 25px;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     width: 100%;
     border-top: 2px solid #7FFF00;
     border-bottom: 2px solid #7FFF00;
@@ -34,23 +35,13 @@ const DivProjectSection = styled.div`
 const DivProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
-  top: 18%;
-  width: 100%;
+  width: 90%;
+  height: 100%;
   align-items: center;
-  padding: 0 45px 0 15px;
+  padding: 0 45px 0 5px;
 
-  @media (max-width: 650px) {
-    top: 0!important;
-    padding: 0 30px 0 30px;
-  }
-
-  @media (min-height: 1000px) {
-    top: 25%;
-  }
-
-  @media (min-height: 1300px) {
-    top: 40%;
+  @media (max-width: 660px) {
+    padding: 0;
   }
 `;
 
@@ -58,22 +49,18 @@ const DivProject = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 125px;
+  height: 25%;
   background: gray;
   margin-bottom: 25px;
-
-  @media (max-width: 650px) {
-    height: 100px;
-  }
 `;
 
 const DivResumeSection = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 48%;
   align-items: center;
 
-  @media (max-width: 650px) {
+  @media (max-width: 660px) {
     width: 100%;
     border-top: 2px solid #7FFF00;
     border-bottom: 2px solid #7FFF00;
@@ -98,16 +85,26 @@ const DivResumeContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  max-width: 695px;
+
+  @media (max-width: 660px) {
+    margin: 0;
+    max-width: 520px;
+  }
 `;
 
 const DivResumeImg = styled.div`
   display: flex;
-  margin: 20px;
+  margin: 15px;
   position: relative;
   border: 2px solid black;
 
+@media (max-width: 660px) {
+  margin: 10px;
+}
+
   &::before {
-    content: '${props => props.projectName}';
+    content: '';
     font-size: ${props => props.pNamefontSize};
     font-weight: bold;
     text-align: center;
@@ -132,12 +129,9 @@ const DivResumeImg = styled.div`
     box-shadow: 0 15px 45px 0px #888888;
 
     p {
-      visibility: hidden;
+      text-decoration: underline;
+      z-index: 2;
     }
-  }
-
-  @media (max-width: 650px) {
-    margin: 10px;
   }
 `;
 
@@ -145,14 +139,18 @@ const AWordDownload = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 130px;
+  width: 140px;
   cursor: pointer;
   padding: 15px;
   background: #FFFFFF;
 
   @media (max-width: 800px) {
-    width: 108px;
+    width: 115px;
     padding: 5px;
+  }
+
+  @media (max-width: 660px) {
+    width: 108px;
   }
 `;
 
@@ -164,7 +162,15 @@ const PResumeTitle = styled.p`
   margin: 0;
   font-weight: bold;
   user-select: none;
-  font-size: 9px;
+  font-size: 16px;
+
+  @media (max-width: 800px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 660px) {
+    font-size: 14px;
+  }
 `;
 
 
@@ -185,33 +191,33 @@ const PortfolioMidSection = props => {
       <DivResumeSection>
         <H1Resumes>Resume(s)</H1Resumes>
         <DivResumeContainer>
-          <DivResumeImg projectName="Front-End Developer" pNamefontSize="9px">
+          <DivResumeImg projectName="Front-End Dev" pNamefontSize="9px">
             <AWordDownload>
-              <PResumeTitle>Front-End&nbsp;Developer</PResumeTitle>
+              <PResumeTitle>Front-End&nbsp;Dev</PResumeTitle>
               <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
             </AWordDownload>
           </DivResumeImg>
-            <DivResumeImg projectName="Full Stack Developer" pNamefontSize="9px">
+            <DivResumeImg projectName="Full Stack Dev" pNamefontSize="9px">
             <AWordDownload>
-              <PResumeTitle>Full&nbsp;Stack&nbsp;Developer</PResumeTitle>
+              <PResumeTitle>Full&nbsp;Stack&nbsp;Dev</PResumeTitle>
               <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
             </AWordDownload>
           </DivResumeImg>
-            <DivResumeImg projectName="Back-End Developer" pNamefontSize="9px">
+            <DivResumeImg projectName="Back-End Dev" pNamefontSize="9px">
             <AWordDownload>
-              <PResumeTitle>Back-End&nbsp;Developer</PResumeTitle>
+              <PResumeTitle>Back-End&nbsp;Dev</PResumeTitle>
               <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
             </AWordDownload>
           </DivResumeImg>
-            <DivResumeImg projectName="Software Developer" pNamefontSize="9px">
+            <DivResumeImg projectName="Software Dev" pNamefontSize="9px">
             <AWordDownload>
-              <PResumeTitle>Software&nbsp;Developer</PResumeTitle>
+              <PResumeTitle>Software&nbsp;Dev</PResumeTitle>
               <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
             </AWordDownload>
           </DivResumeImg>
-            <DivResumeImg projectName="IT/Network/Sys Admin" pNamefontSize="9px">
+            <DivResumeImg projectName="IT Admin" pNamefontSize="9px">
             <AWordDownload>
-              <PResumeTitle>IT/Network/Sys&nbsp;Admin</PResumeTitle>
+              <PResumeTitle>IT&nbsp;Admin</PResumeTitle>
               <ImgPdf src={require('../../assets/img/pdfpage.svg')}></ImgPdf>
             </AWordDownload>
           </DivResumeImg>
