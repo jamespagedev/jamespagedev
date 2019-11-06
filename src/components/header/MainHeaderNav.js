@@ -47,24 +47,6 @@ const LinkHome = styled(Link)`
   }
 `;
 
-const LinkPortfolio = styled(Link)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  padding: 0 10.9px;
-  color: ${props => (props.selectedmainheaderpage === 'true' ? Colors.GoldTips : `white`)};
-  text-decoration: ${props => (props.selectedmainheaderpage === 'true' ? `underline` : `none`)};
-  text-shadow: ${props => (props.selectedmainheaderpage === 'true' ? `none` : `2px 3px rgba(0, 0, 0, 0.4);`)};
-
-  &:hover {
-    transition: all 0.2s ease-in;
-    color: ${Colors.GoldTips};
-    background-color: ${Colors.Rhino};
-  }
-`;
-
 const LinkCareer = styled(Link)`
   display: flex;
   justify-content: center;
@@ -172,12 +154,6 @@ const MainHeaderNav = props => {
         >
           Home
         </LinkHome>
-        <LinkPortfolio
-          selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.portfolio).toString()}
-          to={`${props.portfolioLink}`}
-        >
-          Portfolio
-        </LinkPortfolio>
         <LinkCareer
           selectedmainheaderpage={props.pathname.includes(ClientUrlLinks.career).toString()}
           to={`${props.careerLink}`}

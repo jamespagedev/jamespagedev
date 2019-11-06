@@ -1,6 +1,5 @@
 const ClientUrlLinks = {
   home: '/',
-  portfolio: 'portfolio',
   career: 'career',
   careernavs: {
     main: 'main',
@@ -18,7 +17,6 @@ const ClientUrlLinks = {
 const MainPageTitles = {
   default: 'Home',
   home: 'Home',
-  portfolio: 'portfolio',
   career: 'Career',
   hobbies: 'Hobbies',
   about: 'About',

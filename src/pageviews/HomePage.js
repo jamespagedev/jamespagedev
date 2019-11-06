@@ -48,7 +48,7 @@ const DivOverlay = styled.div`
 
 const ImgFace = styled.img`
   width: 120px;
-  height: 150px;
+  height: 130px;
   margin-top: 230px;
   border-radius: 15px;
   -webkit-user-select: none;
@@ -70,7 +70,7 @@ const HomePage = props => {
       <DivImgBackground>
         <ImgFace src={`${myFaceImgImg}`} draggable="false" alt='' />
         <DivOverlay>
-          <h2>Greetings, thank you for taking the time to visit my website. I'm a software developer who enjoys working on front-end, back-end, full stack, automation, and systems. My experience ranges in many different tech stacks over the years of being in industry. I enjoy learning new technologies and coming up with better coding architectures. Feel free to browse around if you want to find out more about me. If you like what you see... feel free to <LinkContact to={`${props.contactLink}`} draggable="false">contact</LinkContact> me.</h2>
+          <h2>Greetings, thank you for taking the time to visit my website. I'm a software developer who enjoys working on front-end, back-end, full stack, automation, and systems. I'm mostly just using this site as my personal internet corner space to mess around. If you like what you see... feel free to <LinkContact to={`${props.contactLink}`} draggable="false">contact</LinkContact> me.</h2>
         </DivOverlay>
       </DivImgBackground>
     </DivWrapper>
